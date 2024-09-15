@@ -1,0 +1,93 @@
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    background-image: url(/images/summer5.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+}
+
+input, button {
+    font-family: 'Press Start 2P', cursive;
+}
+
+div.start-page {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    width: 1200px;
+    
+}
+
+div.start-page header {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    padding: 1.5em;
+    padding-top: 3em;
+    background-color: rgb(74, 123, 131);
+    border-radius: 1em;
+    box-shadow: rgba(8, 8, 8, 0.4) 5px 5px, rgba(56, 56, 56, 0.3) 10px 10px, rgba(97, 97, 97, 0.3) 15px 15px;
+    text-align: center;
+    color: white;
+}
+
+div.start-page header h1 {
+    font-size: 3em;
+    text-shadow: rgba(8, 8, 8, 0.4) 5px 5px, rgba(56, 56, 56, 0.3) 10px 10px;
+    margin-bottom: 1em;
+}
+
+div.start-page header p {
+    text-shadow: rgba(8,8,8,0.4) 5px 4px;
+}
+
+
+
+div.start-page div.buttons {
+    text-align: center;
+    margin-top: 3em;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+div.start-page div.buttons input {
+    padding: 1.5em 3em;
+    border: 0.2em solid black;
+    outline: none;
+    border-radius: 1em;
+    box-shadow: rgba(8, 8, 8, 0.4) 4px 4px, rgba(56, 56, 56, 0.3) 7px 7px, rgba(97, 97, 97, 0.3) 10px 10px;
+    
+}
+
+div.start-page div.buttons button {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1.5em 3em;
+    
+    border: 0.2em solid black;
+    border-radius: 1em;
+    box-shadow: rgba(8, 8, 8, 0.4) 4px 4px, rgba(56, 56, 56, 0.3) 7px 7px, rgba(97, 97, 97, 0.3) 10px 10px;
+}
+
+div.start-page div.buttons button:hover {
+    background-color: rgb(74, 123, 131);
+    cursor: pointer;
+    color: white;
+    transition: 0.3s ease-in;
+}

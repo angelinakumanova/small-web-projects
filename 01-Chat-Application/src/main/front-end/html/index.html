@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/start-page.css">
+    <link rel="stylesheet" href="/styles/chat-page.css">
+    <link rel="stylesheet" href="/styles/popup.css">
+</head>
+<body>
+    <div class="start-page">
+        <header>
+            <h1>Welcome To The Chat!</h1>
+            <p>Join now to connect with other users!</p>
+        </header>
+
+        <div class="buttons">
+            <input type="text" id="username" name="username" placeholder="Insert your username">
+            <button id="enter-chat-btn">Join</button>
+        </div>
+    </div>
+
+    <div id="popup-overlay" class="overlay hidden"></div>
+    
+    <div id="popup-dialog" class="dialog hidden">
+        <div class="dialog-content">
+            <span id="close-btn">&times;</span>
+            <h1>Alert</h1>
+            <p>This username is already taken. Please choose another one.</p>
+        </div>
+    </div>
+
+
+    <div class="chat-page" style="display: none;">
+        <header>
+            <h1>THE CHAT</h1>
+        </header>
+
+        <div class="chat-container">
+            <div class="messages-area">
+                <div class="content">
+                    
+                </div>
+                
+            </div>
+
+            <div class="send-message">
+                <div class="type-message">
+                    <input type="text" placeholder="Your message here">
+                    <button id="send-msg-btn">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>
