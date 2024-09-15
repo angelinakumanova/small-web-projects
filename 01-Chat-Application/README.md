@@ -33,3 +33,6 @@ Load in IntelliJ or similar IDE and run the program.
 After the program is running, open your browser and go to **localhost:7070**.
 
 ## Demo
+**First User**
+
+![Demo GIF](project-images/chatappdemo-ezgif.com-crop.gif)
