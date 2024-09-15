@@ -1,3 +1,12 @@
+# Ignore target directory
+/target/
+
+# Ignore node_modules
+/node_modules/
+
+# Ignore Maven wrapper files
+.mvn/wrapper/maven-wrapper.jar
+
 # Compiled class file
 *.class
 
