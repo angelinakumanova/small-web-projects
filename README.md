@@ -7,7 +7,7 @@ This repository contains a collection of small web projects I've worked on. Each
 ### 💻 [Chat Application](01-Chat-Application)
 A real-time chat application using WebSockets.
 
-- **Technologies:** Java, Javalin WebSocket, HTML, CSS
+- **Technologies:** Java, Javalin WebSocket, JavaScript, HTML, CSS
 - **Features:** Real-time messaging, user authentication
 
 ---
