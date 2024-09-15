@@ -29,10 +29,17 @@ This project is a simple chat application built with Java and Javalin for the ba
 2) cd small-web-projects/01-Chat-Application
 ```
 
-Load in IntelliJ or similar IDE and run the program.
+Load in IntelliJ or similar IDE and run the program (right-click in the ChatServer class, which is located in **src/main/java folder**, and press Run ChatServer.main()).
+
 After the program is running, open your browser and go to **localhost:7070**.
 
-## Demo
-**First User**
+# Demo
+**Logging in**
+--
 
-![Demo GIF](project-images/chatappdemo-ezgif.com-crop.gif)
+![Demo GIF 1](project-images/chatappdemo1.gif)
+
+**Interaction between users and join/leave notifications**
+--
+
+![Demo GIF 2](project-images/chatappdemo2.gif)
