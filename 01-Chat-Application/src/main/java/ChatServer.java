@@ -15,7 +15,7 @@ public class ChatServer {
 
     public static void main(String[] args) {
         Javalin app = Javalin.create(config -> {
-            config.staticFiles.add("/", Location.CLASSPATH);
+            config.staticFiles.add("/public", Location.CLASSPATH);
         }).start(7070);
 
         app.get("/", ctx -> {

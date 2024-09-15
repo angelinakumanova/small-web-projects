@@ -65,6 +65,7 @@ div.messages-area .message {
 div.messages-area .message.sent {
     background-color: rgb(196, 189, 178);
     align-self: flex-end;
+    text-align: right;
 }
 
 div.messages-area .message p.username {
