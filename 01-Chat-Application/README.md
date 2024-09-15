@@ -39,6 +39,11 @@ After the program is running, open your browser and go to **localhost:7070**.
 
 ![Demo GIF 1](project-images/chatappdemo1.gif)
 
+**Attempting to log in with a username that already exists**
+--
+
+![Demo GIF 3](project-images/chatappdemo-alreadyexistinguser.gif)
+
 **Interaction between users and join/leave notifications**
 --
 
