@@ -11,6 +11,10 @@ This project is a simple chat application built with Java and Javalin for the ba
 - Message broadcasting to all connected users.
 - User join and leave notifications.
 - Basic user interface with a chat window and input fields.
+- 
+### Home Page
+
+![Home Page](project-images/home-page.png)
 
 ## Technologies Used
 
