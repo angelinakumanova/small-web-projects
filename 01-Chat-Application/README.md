@@ -29,9 +29,9 @@ This project is a simple chat application built with Java and Javalin for the ba
 2) cd small-web-projects/01-Chat-Application
 ```
 
-Load in IntelliJ or similar IDE and run the program (right-click in the ChatServer class, which is located in **src/main/java folder**, and press Run ChatServer.main()).
+Load in IntelliJ (dependencies should be installed automatically) and run the program (right-click in the ChatServer class, which is located in **src/main/java folder**, and press Run ChatServer.main()).
 
-After the program is running, open your browser and go to **localhost:7070**.
+Once the program has started running, open your browser and go to **localhost:7070**.
 
 # Demo
 **Logging in**
