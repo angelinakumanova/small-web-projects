@@ -1,4 +1,4 @@
 package bg.doctorly.doctorlyapp.service;
 
-public interface DoctorService {
+public interface DoctorService extends BaseService{
 }
