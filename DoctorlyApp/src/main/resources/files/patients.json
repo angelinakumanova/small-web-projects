@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "Ivan",
+    "lastName": "Ivanov",
+    "dateOfBirth": "1985-07-15",
+    "phoneNumber": "123-456-7890"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "dateOfBirth": "1990-11-22",
+    "phoneNumber": "987-654-3210"
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "dateOfBirth": "2000-05-30",
+    "phoneNumber": "555-123-4567"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "dateOfBirth": "1975-03-10",
+    "phoneNumber": "321-654-9870"
+  }
+]
