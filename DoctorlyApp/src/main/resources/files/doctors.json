@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "profilePictureUrl": "https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",,
+    "specialization": "General Practitioner",
+    "description": "Family medicine practitioner with a focus on preventative care.",
+    "phoneNumber": "+1234567890"
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Smith",
+    "profilePictureUrl": "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
+    "specialization": "Cardiologist",
+    "description": "Cardiologist specializing in heart disease and preventative care.",
+    "phoneNumber": "+1234567891"
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "profilePictureUrl": "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww",
+    "specialization": "Orthopedic Surgeon",
+    "description": "Orthopedic surgeon with expertise in joint replacement and sports injuries.",
+    "phoneNumber": "+1234567892"
+  },
+  {
+    "firstName": "Sarah",
+    "lastName": "Williams",
+    "profilePictureUrl": "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
+    "specialization": "Dermatologist",
+    "description": "Specializing in skin conditions, skin cancer prevention, and cosmetic dermatology.",
+    "phoneNumber": "+1234567893"
+  },
+  {
+    "firstName": "David",
+    "lastName": "Brown",
+    "profilePictureUrl": "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg",
+    "specialization": "Pediatrician",
+    "description": "Pediatrician focused on childhood diseases and developmental health.",
+    "phoneNumber": "+1234567894"
+  }
+]
