@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -42,11 +43,17 @@ public class PatientServiceImpl implements PatientService {
         try (JsonReader jsonReader = new JsonReader(Files.newBufferedReader(Path.of(FILE_PATH)))) {
             PatientImportModel[] patients = gson.fromJson(jsonReader, PatientImportModel[].class);
 
-            Arrays.stream(patients).map(d -> modelMapper.map(d, Patient.class)).forEach(patientRepository::save);
+            Arrays.stream(patients).map(p -> modelMapper.map(p, Patient.class)).forEach(patientRepository::save);
             patientRepository.flush();
             System.out.println("Successfully imported " + patients.length + " patients");
         } catch (IOException e) {
             logger.error("Error reading patients data from file: {}", FILE_PATH);
         }
+    }
+
+    @Override
+    public Optional<Patient> getById(Long id) {
+
+        return patientRepository.findById(id);
     }
 }

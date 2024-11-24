@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -49,5 +50,11 @@ public class DoctorServiceImpl implements DoctorService {
         } catch (IOException e) {
             logger.error("Error reading doctors data from file: {}", FILE_PATH);
         }
+    }
+
+    @Override
+    public Optional<Doctor> getById(Long id) {
+        return doctorRepository.findById(id);
+
     }
 }
