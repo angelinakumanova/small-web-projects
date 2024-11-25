@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | Doctorly </title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+    <header class="site-section site-header">
+        <div class="left-side">
+            <img th:src="@{/images/Screenshot_1-Photoroom.png}" alt="logo" id="logo">
+            <h1>| Doctorly</h1>
+        </div>
+        
+        
+        <nav>
+            <ul>
+                <li><a th:href="@{users/login}"><span >Login</span></a></li>
+                <li><a th:href="@{users/signup}"><span>Register</span></a></li>
+                <li><span>My Appointments</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="site-section intro">
+        <div class="side-text">
+            <h1>Welcome to Doctorly!</h1>
+            <h3>Your specialist is just one click away!</h3>
+            <img th:src="@{/images/06b185e5b2322f1ab0557db59b554cd5-jXyzRkSCB-transformed.png}" alt="doctor">
+        </div>
+
+        <div class="specialists-select">
+            <h2>Find the Right Expert for Your Health Needs!</h2>
+            <select name="specialists">
+                <option value="">Select specialization</option>
+                <option value=""></option>
+            </select>
+            <select name="city" >
+                <option value="">Select your city</option>
+                <option value="Sofia">Sofia</option>
+            </select>
+            <span>Search</span>
+        </div>
+    </div>
+
+    <footer class="site-section site-footer">
+        <p>&copy; 2024 Doctorly. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
