@@ -44,6 +44,9 @@
                     <div class="form-floating mb-3">
                         <input name="password" type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
                         <label for="floatingPassword">Password</label>
+                        <div class="invalid-feedback" style="display:none">
+                            Password should be at least 6 characters long and shouldn't contain special characters!
+                        </div>
                     </div>
                     <div class="form-floating mb-3">
                         <input name="confirmPassword" type="password" class="form-control rounded-3" id="floatingConfirmPassword" placeholder="Confirm Password">
@@ -63,5 +66,7 @@
     <footer class="site-section site-footer">
         <p>&copy; 2024 Doctorly. All Rights Reserved.</p>
     </footer>
+
+    <script type="module" th:src="@{/js/app.js}"></script>
 </body>
 </html>

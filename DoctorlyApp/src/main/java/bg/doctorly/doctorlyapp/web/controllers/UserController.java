@@ -29,7 +29,7 @@ public class UserController {
     //TODO: Redirect to appointments page after successful register
     @PostMapping("/signup")
     public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
-        ModelAndView mav = new ModelAndView("/");
+        ModelAndView mav = new ModelAndView("redirect:/");
 
         if (!userService.validateRegisterModel(userRegisterModel)) {
             mav.setViewName("/user/signup");
