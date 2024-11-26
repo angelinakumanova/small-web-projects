@@ -6,6 +6,7 @@ import bg.doctorly.doctorlyapp.service.DoctorService;
 import bg.doctorly.doctorlyapp.service.PatientService;
 import bg.doctorly.doctorlyapp.service.UserService;
 import bg.doctorly.doctorlyapp.service.models.UserImportModel;
+import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import org.modelmapper.ModelMapper;
@@ -70,5 +71,16 @@ public class UserServiceImpl implements UserService {
 
         map.setPatient(patientService.getById(u.getEntity()).get());
         return map;
+    }
+
+
+    @Override
+    public boolean validateRegisterModel(UserRegisterModel userRegisterModel) {
+        return userRegisterModel.getPassword().equals(userRegisterModel.getConfirmPassword());
+    }
+
+    @Override
+    public void registerUser(UserRegisterModel userRegisterModel) {
+        this.userRepository.saveAndFlush(modelMapper.map(userRegisterModel, User.class));
     }
 }

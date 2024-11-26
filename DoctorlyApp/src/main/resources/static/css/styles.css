@@ -6,8 +6,8 @@
 
 body {
     font: 20px/1.5 'Lato', sans-serif;
-    overflow: hidden;
 }
+
 
 .site-header {
     display: flex;
@@ -43,7 +43,7 @@ body {
 
 .site-header ul li {
     padding-top: 0.5em;
-    padding-right: 2em;    
+    padding-right: 2em;
 }
 
 .site-header a {
@@ -57,7 +57,7 @@ body {
     color: white;
     transition: 0.5s ease;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+
 }
 
 .site-header ul span:hover {
@@ -67,20 +67,25 @@ body {
 }
 
 .site-section.intro {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 3em 2em;
     display: flex;
-    justify-content: space-between;
-    padding: 5em;
-    height: 85vh;
+    /* flex-wrap: wrap; */
+}
+
+.site-section.intro .side-text {
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-.site-section.intro img {
-    width: 600px;
+.site-section.intro .side-text img {
+    max-width: 40%;
+    height: auto;
     border-radius: 50%;
-    position: absolute;
-    top: 20%;
-    left: 27%;
 }
+
 
 .site-section.intro .side-text h1 {
     font-size: 3em;
@@ -92,15 +97,15 @@ body {
     color: white;
     background-color: #FF784F;
     padding: 0.4em 1em;
-    width: 75%;
+    width: 90%;
     border-radius: 1em;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .site-section .specialists-select {
+    width: 50%;
     display: flex;
     background-color: #FF784F;
-    height: 50vh;
     color: white;
     border-radius: 2em;
     flex-direction: column;
@@ -110,25 +115,35 @@ body {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+.site-section .specialists-select form {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
 .site-section .specialists-select select {
     font-size: 1em;
-    height: 15%;
+    height: 7vh;
+    max-width: 100%;
     border: none;
     padding-left: 1em;
     border-radius: 1em;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
-.site-section .specialists-select span {
+.site-section .specialists-select button {
+    font-size: 1em;
     color: #FF784F;
     font-weight: bold;
     background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    border: none;
     border-radius: 2em;
     padding: 1em;
     transition: 0.5s ease;
 }
 
-.site-section .specialists-select span:hover {
+.site-section .specialists-select button:hover {
     cursor: pointer;
     background-color: #a31728;
     transition: 0.5s ease;
@@ -136,11 +151,14 @@ body {
 }
 
 .site-section.site-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.5em;
+    width: 100%;
     text-align: center;
-    margin-top: 0.5em;
     background-color: #191414;
     color: white;
-    height: 5vh;
 }
 
 
