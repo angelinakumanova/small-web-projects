@@ -18,9 +18,13 @@
 
         <nav>
             <ul>
-                <li><a th:href="@{users/login}"><span >Login</span></a></li>
-                <li><a th:href="@{users/signup}"><span>Register</span></a></li>
-                <th:block th:if="${isLogged == true}"><li><span>My Appointments</span></li></th:block>
+                <th:block th:if="${isLogged == false}">
+                    <li><a th:href="@{users/login}"><span >Login</span></a></li>
+                    <li><a th:href="@{users/signup}"><span>Register</span></a></li>
+                </th:block>
+                <th:block th:if="${isLogged == true}">
+                    <li><span>My Appointments</span></li>
+                </th:block>
             </ul>
         </nav>
     </header>

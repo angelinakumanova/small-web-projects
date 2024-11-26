@@ -1,9 +1,6 @@
 package bg.doctorly.doctorlyapp.data.entites;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -14,10 +11,14 @@ public class Doctor extends BaseEntity {
     private String firstName;
     @Column(name = "last_name", nullable = false)
     private String lastName;
+    @ManyToOne
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
     @Column(name = "profile_picture_url", nullable = false, columnDefinition = "TEXT")
     private String profilePictureUrl;
-    @Column(nullable = false)
-    private String specialization;
+    @ManyToOne
+    @JoinColumn(name = "specialization_id", nullable = false)
+    private Specialization specialization;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String description;
     @Column(nullable = false, unique = true)
@@ -43,6 +44,14 @@ public class Doctor extends BaseEntity {
         this.lastName = lastName;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
     public String getProfilePictureUrl() {
         return profilePictureUrl;
     }
@@ -51,11 +60,11 @@ public class Doctor extends BaseEntity {
         this.profilePictureUrl = profilePictureUrl;
     }
 
-    public String getSpecialization() {
+    public Specialization getSpecialization() {
         return specialization;
     }
 
-    public void setSpecialization(String specialization) {
+    public void setSpecialization(Specialization specialization) {
         this.specialization = specialization;
     }
 
