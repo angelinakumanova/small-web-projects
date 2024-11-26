@@ -4,6 +4,10 @@ This repository contains a collection of small web projects I've worked on. Each
 
 ---
 
+### 👨🏻‍⚕️ Doctorly
+
+---
+
 ### 💻 [Chat Application](01-Chat-Application)
 A real-time chat application using WebSockets.
 
@@ -11,4 +15,3 @@ A real-time chat application using WebSockets.
 - **Features:** Real-time messaging, user authentication
 
 ---
-
