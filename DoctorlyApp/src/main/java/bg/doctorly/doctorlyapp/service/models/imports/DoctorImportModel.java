@@ -1,8 +1,9 @@
-package bg.doctorly.doctorlyapp.service.models;
+package bg.doctorly.doctorlyapp.service.models.imports;
 
 public class DoctorImportModel {
     private String firstName;
     private String lastName;
+    private String city;
     private String profilePictureUrl;
     private String specialization;
     private String description;
@@ -24,6 +25,14 @@ public class DoctorImportModel {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getProfilePictureUrl() {

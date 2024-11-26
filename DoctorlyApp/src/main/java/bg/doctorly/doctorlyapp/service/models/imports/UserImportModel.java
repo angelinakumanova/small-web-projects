@@ -1,4 +1,4 @@
-package bg.doctorly.doctorlyapp.service.models;
+package bg.doctorly.doctorlyapp.service.models.imports;
 
 public class UserImportModel {
 

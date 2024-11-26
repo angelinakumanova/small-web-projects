@@ -21,19 +21,19 @@
                 <form class="" th:method="post" th:action="@{/users/signup}">
                     <div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="floatingFirstName" placeholder="John">
+                            <input name ="firstName" type="text" class="form-control rounded-3" id="floatingFirstName" placeholder="John">
                             <label for="floatingFirstName">First Name</label>
                         </div>
                         
 
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control rounded-3" id="floatingLastName" placeholder="Doe">
+                            <input name="lastName" type="text" class="form-control rounded-3" id="floatingLastName" placeholder="Doe">
                             <label for="floatingLastName">Last Name</label>
                         </div>
                         
                     </div>
                     <div class="form-floating mb-3">
-                        <input name="birthday" type="date" class="form-control rounded-3" id="floatingDate" placeholder="1/1/2000">
+                        <input name="dateOfBirth" type="date" class="form-control rounded-3" id="floatingDate">
                         <label for="floatingDate">Date of Birth</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-floating mb-3">
                         <input name="confirmPassword" type="password" class="form-control rounded-3" id="floatingConfirmPassword" placeholder="Confirm Password">
-                        <label for="floatingPassword">Confirm Password</label>
+                        <label for="floatingConfirmPassword">Confirm Password</label>
                     </div>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
                     <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>

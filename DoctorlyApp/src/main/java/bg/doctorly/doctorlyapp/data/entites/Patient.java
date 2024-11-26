@@ -17,8 +17,6 @@ public class Patient extends BaseEntity {
     private String lastName;
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
-    @Column(nullable = false, unique = true)
-    private String phoneNumber;
     @OneToMany(mappedBy = "patient")
     private List<Appointment> appointments;
 
@@ -46,16 +44,6 @@ public class Patient extends BaseEntity {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
-    }
-
-
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public List<Appointment> getAppointments() {

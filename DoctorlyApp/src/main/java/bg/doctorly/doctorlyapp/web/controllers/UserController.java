@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 @Controller
 @RequestMapping("/users")
@@ -28,12 +29,17 @@ public class UserController {
     //TODO: Redirect to appointments page after successful register
     @PostMapping("/signup")
     public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
-        ModelAndView mav = new ModelAndView("redirect:/");
+        ModelAndView mav = new ModelAndView("/");
 
         if (!userService.validateRegisterModel(userRegisterModel)) {
             mav.setViewName("/user/signup");
             System.out.println("Invalid User");
         }
+
+        this.userService.registerUser(userRegisterModel);
+        mav.addObject("isLogged", true);
+        System.out.println("Successfully registered user  "
+                + userRegisterModel.getFirstName() + " " + userRegisterModel.getLastName());
         return mav;
     }
 

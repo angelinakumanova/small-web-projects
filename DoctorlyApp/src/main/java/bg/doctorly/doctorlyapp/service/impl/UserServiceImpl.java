@@ -1,11 +1,12 @@
 package bg.doctorly.doctorlyapp.service.impl;
 
+import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.data.entites.User;
 import bg.doctorly.doctorlyapp.data.repositories.UserRepository;
 import bg.doctorly.doctorlyapp.service.DoctorService;
 import bg.doctorly.doctorlyapp.service.PatientService;
 import bg.doctorly.doctorlyapp.service.UserService;
-import bg.doctorly.doctorlyapp.service.models.UserImportModel;
+import bg.doctorly.doctorlyapp.service.models.imports.UserImportModel;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -81,6 +82,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerUser(UserRegisterModel userRegisterModel) {
-        this.userRepository.saveAndFlush(modelMapper.map(userRegisterModel, User.class));
+        User mapped = modelMapper.map(userRegisterModel, User.class);
+
+        Patient mappedPatient = modelMapper.map(userRegisterModel, Patient.class);
+        patientService.savePatient(mappedPatient);
+
+        mapped.setPatient(mappedPatient);
+        mapped.setRole("ROLE_PATIENT");
+
+        this.userRepository.saveAndFlush(mapped);
     }
 }

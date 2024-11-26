@@ -1,11 +1,9 @@
 package bg.doctorly.doctorlyapp.service.impl;
 
-import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.data.entites.Specialization;
 import bg.doctorly.doctorlyapp.data.repositories.SpecializationRepository;
 import bg.doctorly.doctorlyapp.service.SpecializationService;
-import bg.doctorly.doctorlyapp.service.models.PatientImportModel;
-import bg.doctorly.doctorlyapp.service.models.SpecializationImportModel;
+import bg.doctorly.doctorlyapp.service.models.imports.SpecializationImportModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import org.modelmapper.ModelMapper;
@@ -17,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -56,5 +55,11 @@ public class SpecializationServiceImpl implements SpecializationService {
     @Override
     public Optional<Specialization> findByName(String name) {
         return specializationRepository.findByName(name);
+    }
+
+    @Override
+    public List<String> getAll() {
+        return specializationRepository.getAllByOrderByName().stream().map(s -> s.getName()).toList();
+
     }
 }

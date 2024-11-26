@@ -1,9 +1,9 @@
-package bg.doctorly.doctorlyapp.service.models;
+package bg.doctorly.doctorlyapp.service.models.imports;
 
-public class SpecializationImportModel {
+public class CityImportModel {
     private String name;
 
-    public SpecializationImportModel() {}
+    public CityImportModel() {}
 
     public String getName() {
         return name;

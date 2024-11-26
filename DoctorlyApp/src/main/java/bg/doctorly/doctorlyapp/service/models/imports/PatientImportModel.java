@@ -1,10 +1,9 @@
-package bg.doctorly.doctorlyapp.service.models;
+package bg.doctorly.doctorlyapp.service.models.imports;
 
 public class PatientImportModel {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
-    private String phoneNumber;
 
     public PatientImportModel() {}
 
@@ -32,11 +31,5 @@ public class PatientImportModel {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }
