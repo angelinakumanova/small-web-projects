@@ -3,6 +3,7 @@ package bg.doctorly.doctorlyapp.service.impl;
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
 import bg.doctorly.doctorlyapp.data.repositories.DoctorRepository;
 import bg.doctorly.doctorlyapp.service.DoctorService;
+import bg.doctorly.doctorlyapp.service.SpecializationService;
 import bg.doctorly.doctorlyapp.service.models.DoctorImportModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -24,12 +25,14 @@ public class DoctorServiceImpl implements DoctorService {
     private final static Logger logger = LoggerFactory.getLogger(DoctorServiceImpl.class);
 
     private final DoctorRepository doctorRepository;
+    private final SpecializationService specializationService;
 
     private final Gson gson;
     private final ModelMapper modelMapper;
 
-    public DoctorServiceImpl(DoctorRepository doctorRepository, Gson gson, ModelMapper modelMapper) {
+    public DoctorServiceImpl(DoctorRepository doctorRepository, SpecializationService specializationService, Gson gson, ModelMapper modelMapper) {
         this.doctorRepository = doctorRepository;
+        this.specializationService = specializationService;
         this.gson = gson;
         this.modelMapper = modelMapper;
     }
@@ -44,7 +47,12 @@ public class DoctorServiceImpl implements DoctorService {
         try (JsonReader jsonReader = new JsonReader(Files.newBufferedReader(Path.of(FILE_PATH)))) {
             DoctorImportModel[] doctors = gson.fromJson(jsonReader, DoctorImportModel[].class);
 
-            Arrays.stream(doctors).map(d -> modelMapper.map(d, Doctor.class)).forEach(doctorRepository::save);
+            Arrays.stream(doctors).map(d -> {
+                Doctor map = modelMapper.map(d, Doctor.class);
+                map.setSpecialization(specializationService.findByName(d.getSpecialization()).get());
+
+                return map;
+            }).forEach(doctorRepository::save);
             doctorRepository.flush();
             System.out.println("Successfully imported " + doctors.length + " doctors");
         } catch (IOException e) {

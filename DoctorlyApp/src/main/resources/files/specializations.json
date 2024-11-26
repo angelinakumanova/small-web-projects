@@ -1,0 +1,19 @@
+[
+  { "name": "Cardiologist" },
+  { "name": "Dermatologist" },
+  { "name": "Endocrinologist" },
+  { "name": "Gastroenterologist" },
+  { "name": "Gynecologist" },
+  { "name": "Hematologist" },
+  { "name": "Neurologist" },
+  { "name": "Oncologist" },
+  { "name": "Ophthalmologist" },
+  { "name": "Orthopedic Surgeon" },
+  { "name": "Pediatrician" },
+  { "name": "Psychiatrist" },
+  { "name": "Pulmonologist" },
+  { "name": "Rheumatologist" },
+  { "name": "Surgeon" },
+  { "name": "Urologist" },
+  { "name": "General Practitioner" }
+]
