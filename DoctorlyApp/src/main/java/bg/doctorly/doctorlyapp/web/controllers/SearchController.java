@@ -31,6 +31,7 @@ public class SearchController {
     public String search(@RequestParam(required = false) String specialization,
                          @RequestParam(required = false) String city,
                          Model model) {
+        //TODO: Shared service to load select options
         model.addAttribute("specializations", specializationService.getAll());
         model.addAttribute("cities", cityService.getAll());
         model.addAttribute("currentSpec", specialization);

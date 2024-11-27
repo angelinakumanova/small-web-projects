@@ -1,0 +1,15 @@
+<header class="site-section site-header">
+    <div class="left-side">
+        <img src="/images/Screenshot_1-Photoroom.png" alt="logo" id="logo">
+        <a th:href="@{/}"><h1 >| Doctorly</h1></a>
+    </div>
+
+    <nav>
+        <ul>
+            <li th:if="${#authentication == null}"><a th:href="@{users/login}"><span >Login</span></a></li>
+            <li th:if="${#authentication == null}"><a th:href="@{users/signup}"><span>Register</span></a></li>
+            <li th:if="${#authentication != null}"><span>My Appointments</span></li>
+            <li th:if="${#authentication != null}"><span>Logout</span></li>
+        </ul>
+    </nav>
+</header>

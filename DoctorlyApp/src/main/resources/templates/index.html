@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:include="~{fragments/head}"></th:block>
+    <th:block th:insert="~{fragments/head}"></th:block>
 </head>
 <body>
 
-    <header class="site-section site-header">
-        <div class="left-side">
-            <img th:src="@{/images/Screenshot_1-Photoroom.png}" alt="logo" id="logo">
-            <a th:href="@{/}"><h1 >| Doctorly</h1></a>
-        </div>
-
-        <nav>
-            <ul>
-                <li><a th:href="@{users/login}"><span >Login</span></a></li>
-                <li><a th:href="@{users/signup}"><span>Register</span></a></li>
-                <li><span>My Appointments</span></li>
-            </ul>
-        </nav>
-    </header>
+    <th:block th:insert="~{fragments/nav-header}"></th:block>
 
     <div class="site-section intro">
         <div class="side-text">
@@ -50,9 +37,7 @@
         </div>
     </div>
 
-    <footer class="site-section site-footer">
-        <p>&copy; 2024 Doctorly. All Rights Reserved.</p>
-    </footer>
+    <th:block th:insert="~{fragments/footer}"></th:block>
 
 </body>
 </html>

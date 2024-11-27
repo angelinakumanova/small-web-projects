@@ -178,6 +178,12 @@ body {
     padding-top: 2em;
     text-align: center;
 }
+.site-section.site-footer {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3em;
+}
+
 
 
 
