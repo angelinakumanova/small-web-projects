@@ -32,7 +32,7 @@
         <div class="specialists-select">
             <h2>Find the Right Expert for Your Health Needs!</h2>
             <form th:action="@{/search}" method="get">
-                <select name="specialists">
+                <select name="specialization">
                     <option value="">Select specialization</option>
                     <option th:each="specialization : ${specializations}"
                             th:value="${specialization}"

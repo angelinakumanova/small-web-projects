@@ -1,6 +1,8 @@
 package bg.doctorly.doctorlyapp.service.impl;
 
+import bg.doctorly.doctorlyapp.data.entites.City;
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
+import bg.doctorly.doctorlyapp.data.entites.Specialization;
 import bg.doctorly.doctorlyapp.data.repositories.DoctorRepository;
 import bg.doctorly.doctorlyapp.service.CityService;
 import bg.doctorly.doctorlyapp.service.DoctorService;
@@ -18,6 +20,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -69,6 +72,23 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Optional<Doctor> getById(Long id) {
         return doctorRepository.findById(id);
+
+    }
+
+    @Override
+    public List<Doctor> searchDoctors(String specialization, String city) {
+        Specialization spec = specializationService.findByName(specialization).orElse(null);
+        City cityObj = cityService.findByName(city).orElse(null);
+
+        if (spec == null && cityObj == null) {
+            return doctorRepository.findAll();
+        } else if (spec != null && cityObj != null) {
+            return doctorRepository.findBySpecializationAndCity(spec, cityObj);
+        } else if (spec != null) {
+            return doctorRepository.findBySpecialization(spec);
+        } else {
+            return doctorRepository.findByCity(cityObj);
+        }
 
     }
 }

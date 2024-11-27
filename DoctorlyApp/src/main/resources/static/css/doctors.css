@@ -126,7 +126,7 @@ body {
     padding: 5em 2em 0 2em;
 }
 .col {
-    max-width: 800px;
+    max-width: 600px;
 }
 
 .card {
@@ -172,6 +172,11 @@ body {
 
 .site-container {
     padding-bottom: 2em;
+}
+
+#no-doctors {
+    padding-top: 2em;
+    text-align: center;
 }
 
 
