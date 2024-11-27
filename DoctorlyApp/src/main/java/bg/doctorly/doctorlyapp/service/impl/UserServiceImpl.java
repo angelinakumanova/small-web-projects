@@ -13,6 +13,7 @@ import com.google.gson.stream.JsonReader;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -31,14 +32,15 @@ public class UserServiceImpl implements UserService {
 
     private final Gson gson;
     private final ModelMapper modelMapper;
-//    private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, DoctorService doctorService, PatientService patientService, Gson gson, ModelMapper modelMapper) {
+    public UserServiceImpl(UserRepository userRepository, DoctorService doctorService, PatientService patientService, Gson gson, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.doctorService = doctorService;
         this.patientService = patientService;
         this.gson = gson;
         this.modelMapper = modelMapper;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -62,8 +64,8 @@ public class UserServiceImpl implements UserService {
 
     private User mapUser(UserImportModel u) {
         User map = modelMapper.map(u, User.class);
-//        String hashedPassword = passwordEncoder.encode(u.getPassword());
-//        map.setPassword(hashedPassword);
+        String hashedPassword = passwordEncoder.encode(u.getPassword());
+        map.setPassword(hashedPassword);
 
         if (u.getRole().equals("ROLE_DOCTOR")) {
             map.setDoctor(doctorService.getById(u.getEntity()).get());

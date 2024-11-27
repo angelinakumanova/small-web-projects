@@ -1,6 +1,7 @@
 package bg.doctorly.doctorlyapp.web.controllers;
 
 import bg.doctorly.doctorlyapp.service.UserService;
+import bg.doctorly.doctorlyapp.web.models.UserLoginModel;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +30,7 @@ public class UserController {
     //TODO: Redirect to appointments page after successful register
     @PostMapping("/signup")
     public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
-        ModelAndView mav = new ModelAndView("redirect:/");
+        ModelAndView mav = new ModelAndView("redirect:/login");
 
         if (!userService.validateRegisterModel(userRegisterModel)) {
             mav.setViewName("/user/signup");
@@ -46,5 +47,12 @@ public class UserController {
     @GetMapping("/login")
     public String login() {
         return "/user/login";
+    }
+
+    @PostMapping("/login")
+    public ModelAndView loginPost(@ModelAttribute UserLoginModel userLoginModel) {
+        ModelAndView mav = new ModelAndView("redirect:/");
+
+        return mav;
     }
 }

@@ -34,7 +34,7 @@ document.querySelector("button").addEventListener("click", function (e) {
         isValid = false;
     }
 
-    if (password.value.length < 6 || password.value !== confirmPassword.value) {
+    if (password.value !== confirmPassword.value) {
         showError(confirmPassword);
         isValid = false;
     }

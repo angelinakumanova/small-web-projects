@@ -10,18 +10,12 @@
             <img th:src="@{/images/Screenshot_1-Photoroom.png}" alt="logo" id="logo">
             <h1>| Doctorly</h1>
         </div>
-        
-
 
         <nav>
             <ul>
-                <th:block th:if="${isLogged == false}">
-                    <li><a th:href="@{users/login}"><span >Login</span></a></li>
-                    <li><a th:href="@{users/signup}"><span>Register</span></a></li>
-                </th:block>
-                <th:block th:if="${isLogged == true}">
-                    <li><span>My Appointments</span></li>
-                </th:block>
+                <li><a th:href="@{users/login}"><span >Login</span></a></li>
+                <li><a th:href="@{users/signup}"><span>Register</span></a></li>
+                <li><span>My Appointments</span></li>
             </ul>
         </nav>
     </header>
