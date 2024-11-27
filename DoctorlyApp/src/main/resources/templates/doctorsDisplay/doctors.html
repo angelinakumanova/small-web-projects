@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors | Doctorly</title>
+    <link rel="stylesheet" href="/css/doctors.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header class="site-section site-header">
+        <div class="left-side">
+            <img src="/images/Screenshot_1-Photoroom.png" alt="logo" id="logo">
+            <h1>| Doctorly</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a th:href="@{users/login}"><span >Login</span></a></li>
+                <li><a th:href="@{users/signup}"><span>Register</span></a></li>
+                <li><span>My Appointments</span></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <div class="site-container">
+        <div class="specialists-select">
+            <form th:action="@{/search}" method="get">
+                <select name="specialists">
+                    <option value="">Select specialization</option>
+                    <option th:each="specialization : ${specializations}"
+                    th:value="${specialization}"
+                    th:text="${specialization}"></option>
+                </select>
+                
+                <select name="city">
+                    <option value="">Select your city</option>
+                    <option th:each="city : ${cities}"
+                    th:value="${city}"
+                    th:text="${city}"></option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <div class="doctors-display">
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="/images/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Cardiologist specializing in heart disease and preventative care.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Family medicine practitioner with a focus on preventative care.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Orthopedic surgeon with expertise in joint replacement and sports injuries.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Specializing in skin conditions, skin cancer prevention, and cosmetic dermatology.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Specializing in skin conditions, skin cancer prevention, and cosmetic dermatology.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="image-box">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Specializing in skin conditions, skin cancer prevention, and cosmetic dermatology.</p>
+                        <a href="#" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

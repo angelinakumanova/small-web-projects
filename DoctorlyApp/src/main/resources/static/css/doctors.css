@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 20px/1.5 'Lato', sans-serif;
+
+}
+
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.site-section.site-header .left-side {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-section.site-header #logo {
+    height: 60px;
+}
+
+.site-section.site-header .left-side h1 {
+    color: #FF784F;
+    text-shadow: rgba(0, 0, 0, 0.10) 2px 3px 5px;
+    transition: 0.5s ease;
+}
+
+.site-section.site-header .left-side h1:hover {
+    cursor: pointer;
+    color: #a31728;
+    transition: 0.5s ease;
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.site-header ul li {
+    padding-top: 0.5em;
+    padding-right: 2em;    
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+.site-header ul span {
+    background-color: #FF784F;
+    padding: 0.6em 1em;
+    border-radius: 1em;
+    color: white;
+    transition: 0.5s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.site-header ul span:hover {
+    cursor: pointer;
+    background-color: #a31728;
+    transition: 0.5s ease;
+}
+
+
+.specialists-select {
+    margin: 0 auto;
+    width: 40%;
+    background-color: #FF784F;
+    color: white;
+    border-radius: 2em;
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.specialists-select form {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.specialists-select select {
+    font-size: 1em;
+    height: 5vh;
+    width: 40%;
+    border: none;
+    padding-left: 1em;
+    border-radius: 1em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.specialists-select button {
+    font-size: 1em;
+    color: #FF784F;
+    font-weight: bold;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    border: none;
+    border-radius: 2em;
+    padding: 1em;
+    transition: 0.5s ease;
+}
+
+.specialists-select button:hover {
+    cursor: pointer;
+    background-color: #a31728;
+    transition: 0.5s ease;
+    color: white;
+}
+
+.doctors-display {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2em;
+    padding: 5em 2em 0 2em;
+}
+.col {
+    max-width: 800px;
+}
+
+.card {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: row !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.card .btn.btn-primary {
+    background-color: #FF784F;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    border: none;
+    border-radius: 2em;
+    transition: 0.5s ease;
+}
+
+.card .btn.btn-primary:hover {
+    cursor: pointer;
+    background-color: #a31728;
+    transition: 0.5s ease;
+    color: white;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.image-box {
+    width: 300px;
+    height: 250px;
+    aspect-ratio: 1/1;
+}
+
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.site-container {
+    padding-bottom: 2em;
+}
+
+
+
+
