@@ -2,7 +2,7 @@ package bg.doctorly.doctorlyapp.service.impl;
 
 import bg.doctorly.doctorlyapp.data.entites.City;
 import bg.doctorly.doctorlyapp.data.repositories.CityRepository;
-import bg.doctorly.doctorlyapp.service.CityService;
+import bg.doctorly.doctorlyapp.service.entityService.CityService;
 import bg.doctorly.doctorlyapp.service.models.imports.CityImportModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

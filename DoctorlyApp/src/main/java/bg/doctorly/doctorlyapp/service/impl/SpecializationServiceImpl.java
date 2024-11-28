@@ -2,7 +2,7 @@ package bg.doctorly.doctorlyapp.service.impl;
 
 import bg.doctorly.doctorlyapp.data.entites.Specialization;
 import bg.doctorly.doctorlyapp.data.repositories.SpecializationRepository;
-import bg.doctorly.doctorlyapp.service.SpecializationService;
+import bg.doctorly.doctorlyapp.service.entityService.SpecializationService;
 import bg.doctorly.doctorlyapp.service.models.imports.SpecializationImportModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

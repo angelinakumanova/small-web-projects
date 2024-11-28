@@ -1,4 +1,4 @@
-package bg.doctorly.doctorlyapp.service;
+package bg.doctorly.doctorlyapp.service.entityService;
 
 import bg.doctorly.doctorlyapp.data.entites.Specialization;
 

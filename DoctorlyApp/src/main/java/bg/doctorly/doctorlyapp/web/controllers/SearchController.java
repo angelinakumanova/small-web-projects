@@ -1,9 +1,10 @@
 package bg.doctorly.doctorlyapp.web.controllers;
 
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
-import bg.doctorly.doctorlyapp.service.CityService;
-import bg.doctorly.doctorlyapp.service.DoctorService;
-import bg.doctorly.doctorlyapp.service.SpecializationService;
+import bg.doctorly.doctorlyapp.service.SharedDataService;
+import bg.doctorly.doctorlyapp.service.entityService.CityService;
+import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
+import bg.doctorly.doctorlyapp.service.entityService.SpecializationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,13 +18,11 @@ import java.util.List;
 public class SearchController {
 
     private final DoctorService doctorService;
-    private final SpecializationService specializationService;
-    private final CityService cityService;
+    private final SharedDataService sharedDataService;
 
-    public SearchController(DoctorService doctorService, SpecializationService specializationService, CityService cityService) {
+    public SearchController(DoctorService doctorService, SharedDataService sharedDataService) {
         this.doctorService = doctorService;
-        this.specializationService = specializationService;
-        this.cityService = cityService;
+        this.sharedDataService = sharedDataService;
     }
 
 
@@ -31,11 +30,10 @@ public class SearchController {
     public String search(@RequestParam(required = false) String specialization,
                          @RequestParam(required = false) String city,
                          Model model) {
-        //TODO: Shared service to load select options
-        model.addAttribute("specializations", specializationService.getAll());
-        model.addAttribute("cities", cityService.getAll());
+        sharedDataService.addSharedAttributes(model);
         model.addAttribute("currentSpec", specialization);
         model.addAttribute("currentCity", city);
+
         List<Doctor> doctors = doctorService.searchDoctors(specialization, city);
 
         model.addAttribute("doctors", doctors);

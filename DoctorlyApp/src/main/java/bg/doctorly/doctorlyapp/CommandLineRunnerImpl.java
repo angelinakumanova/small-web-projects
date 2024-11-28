@@ -1,6 +1,6 @@
 package bg.doctorly.doctorlyapp;
 
-import bg.doctorly.doctorlyapp.service.*;
+import bg.doctorly.doctorlyapp.service.entityService.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

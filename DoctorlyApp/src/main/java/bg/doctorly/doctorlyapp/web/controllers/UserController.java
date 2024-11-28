@@ -1,6 +1,6 @@
 package bg.doctorly.doctorlyapp.web.controllers;
 
-import bg.doctorly.doctorlyapp.service.UserService;
+import bg.doctorly.doctorlyapp.service.entityService.UserService;
 import bg.doctorly.doctorlyapp.web.models.UserLoginModel;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import org.springframework.stereotype.Controller;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.View;
 
 @Controller
 @RequestMapping("/users")
