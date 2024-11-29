@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -105,5 +106,19 @@ public class UserServiceImpl implements UserService {
     public boolean findByEmail(String email) {
 
         return userRepository.findByEmail(email).isPresent();
+    }
+
+    @Override
+    public boolean existsByEmailAndPassword(String email, String password) {
+        User user = userRepository.findByEmail(email).orElse(null);
+
+        if (user == null) {
+            return false;
+        }
+
+        String inputPassword = passwordEncoder.encode(password);
+        String storedPassword = user.getPassword();
+
+        return passwordEncoder.matches(inputPassword, storedPassword);
     }
 }

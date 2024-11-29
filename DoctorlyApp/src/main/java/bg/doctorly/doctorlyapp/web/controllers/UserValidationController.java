@@ -1,6 +1,7 @@
 package bg.doctorly.doctorlyapp.web.controllers;
 
 import bg.doctorly.doctorlyapp.service.entityService.UserService;
+import bg.doctorly.doctorlyapp.web.models.UserLoginModel;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,12 +16,22 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/validate")
-public class SignUpValidationController {
+public class UserValidationController {
 
     private final UserService userService;
 
-    public SignUpValidationController(UserService userService) {
+    public UserValidationController(UserService userService) {
         this.userService = userService;
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> validateLogin(@RequestBody UserLoginModel user) {
+        System.out.println();
+        if (userService.existsByEmailAndPassword(user.getEmail(), user.getPassword())) {
+            return ResponseEntity.badRequest().body(Set.of("floatingEmail", "floatingPassword"));
+        }
+
+        return ResponseEntity.ok(Map.of("message", "User successfully logged in."));
     }
 
     @PostMapping("/signup")

@@ -5,7 +5,10 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
     const payload = Object.fromEntries(formData);
 
-    fetch("/api/validate/signup", {
+    const endpoint = window.location.pathname === "/users/signup" ? "signup" : "login";
+    const fetchPage = `/api/validate/${endpoint}`;
+
+    fetch(fetchPage, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -13,13 +16,13 @@ document.querySelector("form").addEventListener("submit", (e) => {
         body: JSON.stringify(payload),
     })
         .then(async (response) => {
-            console.log(response);
+
             if (!response.ok) {
                 const invalidFields = await response.json();
 
                 for (let field of invalidFields) {
                     const input = document.querySelector(`#${field}`);
-                    console.log(input);
+
                     if (input) {
                         showError(input);
                     }
@@ -28,10 +31,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
             }
             return response.json();
         })
-        .then((data) => {
-            console.log("Signup successful!", data);
-
-            window.location.href = "/users/login";
+        .then(() => {
+            window.location.href = "/";
         })
         .catch((error) => {
             console.error("Error during signup:", error.message);
@@ -49,15 +50,17 @@ function showError(input) {
 }
 
 function showHideMessage(input, state) {
-    if (input.id === "floatingDate" || input.id === "floatingPassword" || input.id === "floatingInput") {
-        const closest = input.closest("div").children[2];
+    const closest = input.closest("div").querySelector(".invalid-feedback");
+
+    if (closest) {
         closest.style.display = `${state}`;
+
         if (input.id === "floatingInput") {
-            if (!input.value) {
-                closest.textContent = "Invalid email!"
-            } else {
-                closest.textContent = "User with this email already exists!"
-            }
+            closest.textContent = !input.value
+                ? "Invalid email!"
+                : "User with this email already exists!";
+        } else if (input.id === "floatingDate") {
+            closest.textContent = "You must be at least 18 years old!";
         }
     }
 }

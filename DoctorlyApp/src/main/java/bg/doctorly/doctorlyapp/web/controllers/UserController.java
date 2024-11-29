@@ -11,12 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
-
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
 
     @GetMapping("/signup")
     public String signup() {
@@ -26,12 +20,5 @@ public class UserController {
     @GetMapping("/login")
     public String login() {
         return "/user/login";
-    }
-
-    @PostMapping("/login")
-    public ModelAndView loginPost(@ModelAttribute UserLoginModel userLoginModel) {
-        ModelAndView mav = new ModelAndView("redirect:/");
-
-        return mav;
     }
 }
