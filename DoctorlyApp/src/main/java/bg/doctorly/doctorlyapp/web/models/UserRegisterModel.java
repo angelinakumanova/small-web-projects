@@ -1,11 +1,22 @@
 package bg.doctorly.doctorlyapp.web.models;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.Length;
+
 public class UserRegisterModel {
+    @NotNull @Length(min = 2)
     private String firstName;
+    @NotNull @Length(min = 2)
     private String lastName;
+    @NotNull
     private String dateOfBirth;
+    @NotNull @Email(regexp = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
     private String email;
+    @NotNull @Length(min = 2) @Pattern(regexp = "^[a-zA-Z0-9]$")
     private String password;
+    @NotNull @Length(min = 2)
     private String confirmPassword;
 
     public UserRegisterModel() {

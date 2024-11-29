@@ -1,4 +1,4 @@
-package bg.doctorly.doctorlyapp.service.impl;
+package bg.doctorly.doctorlyapp.service.impl.entityServiceImpl;
 
 import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.data.repositories.PatientRepository;

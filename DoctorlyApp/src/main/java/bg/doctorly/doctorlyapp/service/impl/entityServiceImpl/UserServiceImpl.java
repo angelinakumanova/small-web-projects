@@ -1,4 +1,4 @@
-package bg.doctorly.doctorlyapp.service.impl;
+package bg.doctorly.doctorlyapp.service.impl.entityServiceImpl;
 
 import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.data.entites.User;
@@ -7,6 +7,7 @@ import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
 import bg.doctorly.doctorlyapp.service.entityService.PatientService;
 import bg.doctorly.doctorlyapp.service.entityService.UserService;
 import bg.doctorly.doctorlyapp.service.models.imports.UserImportModel;
+import bg.doctorly.doctorlyapp.util.ValidationUtil;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -32,14 +33,16 @@ public class UserServiceImpl implements UserService {
 
     private final Gson gson;
     private final ModelMapper modelMapper;
+    private final ValidationUtil validationUtil;
     private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, DoctorService doctorService, PatientService patientService, Gson gson, ModelMapper modelMapper, PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, DoctorService doctorService, PatientService patientService, Gson gson, ModelMapper modelMapper, ValidationUtil validationUtil, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.doctorService = doctorService;
         this.patientService = patientService;
         this.gson = gson;
         this.modelMapper = modelMapper;
+        this.validationUtil = validationUtil;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -67,7 +70,7 @@ public class UserServiceImpl implements UserService {
         String hashedPassword = passwordEncoder.encode(u.getPassword());
         map.setPassword(hashedPassword);
 
-        if (u.getRole().equals("ROLE_DOCTOR")) {
+        if (u.getRole().equals("DOCTOR")) {
             map.setDoctor(doctorService.getById(u.getEntity()).get());
             return map;
         }
@@ -79,18 +82,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean validateRegisterModel(UserRegisterModel userRegisterModel) {
-        return userRegisterModel.getPassword().equals(userRegisterModel.getConfirmPassword());
+
+        return validationUtil.isValid(userRegisterModel) &&
+                userRegisterModel.getPassword().equals(userRegisterModel.getConfirmPassword());
     }
 
     @Override
     public void registerUser(UserRegisterModel userRegisterModel) {
         User mapped = modelMapper.map(userRegisterModel, User.class);
+        mapped.setPassword(passwordEncoder.encode(userRegisterModel.getPassword()));
 
         Patient mappedPatient = modelMapper.map(userRegisterModel, Patient.class);
         patientService.savePatient(mappedPatient);
 
         mapped.setPatient(mappedPatient);
-        mapped.setRole("ROLE_PATIENT");
+        mapped.setRole("PATIENT");
 
         this.userRepository.saveAndFlush(mapped);
     }

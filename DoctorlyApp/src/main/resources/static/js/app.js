@@ -1,66 +1,56 @@
-document.querySelector("button").addEventListener("click", function (e) {
-    let isValid = true;
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    const firstName = document.getElementById("floatingFirstName");
-    const lastName = document.getElementById("floatingLastName")
-    const birthday = document.getElementById("floatingDate");
-    const email = document.getElementById("floatingInput");
-    const password = document.getElementById("floatingPassword");
-    const confirmPassword = document.getElementById("floatingConfirmPassword");
+    const formData = new FormData(e.target);
 
+    const payload = Object.fromEntries(formData);
 
-    if (firstName.value.trim() === "" || firstName.value.trim().length < 2) {
-        showError(firstName);
-        isValid = false;
-    }
+    fetch("/api/validate/signup", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    })
+        .then(async (response) => {
+            console.log(response);
+            if (!response.ok) {
+                const invalidFields = await response.json();
 
-    if (lastName.value.trim() === "" || lastName.value.trim().length() < 2) {
-        showError(lastName);
-        isValid = false;
-    }
+                for (let field of invalidFields) {
+                    const input = document.querySelector(`#${field}`);
+                    console.log(input);
+                    if (input) {
+                        showError(input);
+                    }
+                }
+                throw new Error("Validation failed");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Signup successful!", data);
 
-    if (birthday.value.trim() === "") {
-        showError(birthday);
-        isValid = false;
-    }
-
-    if (!validateEmail(email.value)) {
-        showError(email);
-        isValid = false;
-    }
-
-    if (password.value.length < 6) {
-        showError(password);
-        isValid = false;
-    }
-
-    if (password.value !== confirmPassword.value) {
-        showError(confirmPassword);
-        isValid = false;
-    }
-
-    if (!isValid) {
-        e.preventDefault(); 
-    }
+            window.location.href = "/users/login";
+        })
+        .catch((error) => {
+            console.error("Error during signup:", error.message);
+        });
 });
 
-document.querySelectorAll("input").forEach(i => i.addEventListener("click", (e) => {
+document.querySelectorAll("input").forEach(i => i.addEventListener("focus", (e) => {
     i.classList.remove("is-invalid")
-    showHidePasswordMessage(i, "none");
+    showHideMessage(i, "none");
 }));
 
 function showError(input) {
-    showHidePasswordMessage(input, "block");
+    showHideMessage(input, "block");
     input.classList.add("is-invalid");
 }
 
-function showHidePasswordMessage(input, state) {
-    if (input.id === "floatingPassword") {
-        document.querySelector(".invalid-feedback").style.display = `${state}`;
+function showHideMessage(input, state) {
+    if (input.id === "floatingDate" || input.id === "floatingPassword") {
+        console.log(input.closest("div"));
+        input.closest("div").children[2].style.display = `${state}`;
     }
-}
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
 }

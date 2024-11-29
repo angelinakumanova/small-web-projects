@@ -30,7 +30,7 @@ public class SearchController {
     public String search(@RequestParam(required = false) String specialization,
                          @RequestParam(required = false) String city,
                          Model model) {
-        sharedDataService.addSharedAttributes(model);
+        sharedDataService.loadSearchOptions(model);
         model.addAttribute("currentSpec", specialization);
         model.addAttribute("currentCity", city);
 

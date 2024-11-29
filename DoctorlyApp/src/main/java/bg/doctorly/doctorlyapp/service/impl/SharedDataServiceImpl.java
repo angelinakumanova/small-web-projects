@@ -21,7 +21,7 @@ public class SharedDataServiceImpl implements SharedDataService {
 
 
     @Override
-    public void addSharedAttributes(Model model) {
+    public void loadSearchOptions(Model model) {
         model.addAttribute("specializations", specializationService.getAll());
         model.addAttribute("cities", cityService.getAll());
     }

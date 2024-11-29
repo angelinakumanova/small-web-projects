@@ -4,5 +4,5 @@ import org.springframework.ui.Model;
 
 
 public interface SharedDataService {
-    void addSharedAttributes(Model model);
+    void loadSearchOptions(Model model);
 }

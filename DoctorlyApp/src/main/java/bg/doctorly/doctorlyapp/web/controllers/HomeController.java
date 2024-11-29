@@ -18,7 +18,7 @@ public class HomeController {
     @GetMapping("/")
     public String showHomePage(Model model) {
         model.addAttribute("title", "Home | Doctorly");
-        sharedDataService.addSharedAttributes(model);
+        sharedDataService.loadSearchOptions(model);
 
         return "index";
     }

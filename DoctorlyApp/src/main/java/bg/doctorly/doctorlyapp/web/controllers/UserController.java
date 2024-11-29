@@ -4,10 +4,7 @@ import bg.doctorly.doctorlyapp.service.entityService.UserService;
 import bg.doctorly.doctorlyapp.web.models.UserLoginModel;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -26,22 +23,20 @@ public class UserController {
         return "/user/signup";
     }
 
-    //TODO: Redirect to appointments page after successful register
-    @PostMapping("/signup")
-    public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
-        ModelAndView mav = new ModelAndView("redirect:/login");
-
-        if (!userService.validateRegisterModel(userRegisterModel)) {
-            mav.setViewName("/user/signup");
-            System.out.println("Invalid User");
-        }
-
-        this.userService.registerUser(userRegisterModel);
-        mav.addObject("isLogged", true);
-        System.out.println("Successfully registered user  "
-                + userRegisterModel.getFirstName() + " " + userRegisterModel.getLastName());
-        return mav;
-    }
+//    @PostMapping("/signup")
+//    public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
+//        ModelAndView modelAndView = new ModelAndView("/user/signup");
+//        if (!userService.validateRegisterModel(userRegisterModel)) {
+//            System.out.println("Invalid User");
+//            return modelAndView;
+//        }
+//
+//        modelAndView.setViewName("redirect:/users/login");
+//        this.userService.registerUser(userRegisterModel);
+//        System.out.println("Successfully registered user  "
+//                + userRegisterModel.getFirstName() + " " + userRegisterModel.getLastName());
+//        return modelAndView;
+//    }
 
     @GetMapping("/login")
     public String login() {

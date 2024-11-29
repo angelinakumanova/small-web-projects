@@ -9,7 +9,6 @@ body {
 
 }
 
-
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -19,6 +18,7 @@ body {
 .site-section.site-header .left-side {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
 
 .site-section.site-header #logo {
