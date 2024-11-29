@@ -46,7 +46,8 @@ public class SignUpValidationController {
             }
         }
 
-        if (user.getEmail().trim().isEmpty() || !user.getEmail().matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
+        if (user.getEmail().trim().isEmpty() || !user.getEmail().matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")
+                || userService.findByEmail(user.getEmail())) {
             invalidFields.add("floatingInput");
         }
 

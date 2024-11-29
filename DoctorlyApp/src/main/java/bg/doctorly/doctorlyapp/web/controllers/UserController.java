@@ -23,21 +23,6 @@ public class UserController {
         return "/user/signup";
     }
 
-//    @PostMapping("/signup")
-//    public ModelAndView signupPost(@ModelAttribute UserRegisterModel userRegisterModel) {
-//        ModelAndView modelAndView = new ModelAndView("/user/signup");
-//        if (!userService.validateRegisterModel(userRegisterModel)) {
-//            System.out.println("Invalid User");
-//            return modelAndView;
-//        }
-//
-//        modelAndView.setViewName("redirect:/users/login");
-//        this.userService.registerUser(userRegisterModel);
-//        System.out.println("Successfully registered user  "
-//                + userRegisterModel.getFirstName() + " " + userRegisterModel.getLastName());
-//        return modelAndView;
-//    }
-
     @GetMapping("/login")
     public String login() {
         return "/user/login";

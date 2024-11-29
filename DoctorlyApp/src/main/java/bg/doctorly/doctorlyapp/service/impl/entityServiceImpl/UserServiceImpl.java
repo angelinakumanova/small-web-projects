@@ -100,4 +100,10 @@ public class UserServiceImpl implements UserService {
 
         this.userRepository.saveAndFlush(mapped);
     }
+
+    @Override
+    public boolean findByEmail(String email) {
+
+        return userRepository.findByEmail(email).isPresent();
+    }
 }

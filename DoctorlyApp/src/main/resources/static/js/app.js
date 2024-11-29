@@ -49,8 +49,15 @@ function showError(input) {
 }
 
 function showHideMessage(input, state) {
-    if (input.id === "floatingDate" || input.id === "floatingPassword") {
-        console.log(input.closest("div"));
-        input.closest("div").children[2].style.display = `${state}`;
+    if (input.id === "floatingDate" || input.id === "floatingPassword" || input.id === "floatingInput") {
+        const closest = input.closest("div").children[2];
+        closest.style.display = `${state}`;
+        if (input.id === "floatingInput") {
+            if (!input.value) {
+                closest.textContent = "Invalid email!"
+            } else {
+                closest.textContent = "User with this email already exists!"
+            }
+        }
     }
 }
