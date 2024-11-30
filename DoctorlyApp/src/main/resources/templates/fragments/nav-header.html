@@ -6,10 +6,12 @@
 
     <nav>
         <ul>
-            <li th:if="${#authentication == null}"><a th:href="@{users/login}"><span >Login</span></a></li>
-            <li th:if="${#authentication == null}"><a th:href="@{users/signup}"><span>Register</span></a></li>
-            <li th:if="${#authentication != null}"><span>My Appointments</span></li>
-            <li th:if="${#authentication != null}"><span>Logout</span></li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{users/login}"><span >Login</span></a></li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{users/signup}"><span>Register</span></a></li>
+            <li sec:authorize="isAuthenticated()"><span>My Appointments</span></li>
+            <li sec:authorize="isAuthenticated()">
+                <a th:href="@{users/logout}"><span>Logout</span></a>
+            </li>
         </ul>
     </nav>
 </header>

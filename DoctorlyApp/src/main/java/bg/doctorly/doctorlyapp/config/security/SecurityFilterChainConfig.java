@@ -35,6 +35,7 @@ public class SecurityFilterChainConfig {
                         .failureUrl("/users/login?error=true")
                         .defaultSuccessUrl("/")
                         .permitAll())
+                .logout(logout -> logout.logoutUrl("/users/logout").logoutSuccessUrl("/").permitAll())
                 .userDetailsService(customDetailsService);
 
         return http.build();
