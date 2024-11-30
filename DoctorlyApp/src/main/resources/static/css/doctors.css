@@ -117,20 +117,20 @@ body {
 }
 
 .doctors-display {
+    font-size: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 2em;
-    padding: 5em 2em 0 2em;
+    padding: 1em;
 }
 .col {
     max-width: 600px;
 }
 
 .card {
-    border: 1px solid gray;
     display: flex;
     flex-direction: row !important;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;

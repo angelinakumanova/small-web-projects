@@ -41,6 +41,9 @@ public class SearchController {
         if (doctors.isEmpty()) {
             model.addAttribute("message", "No doctors available for specific criteria");
         }
+
+        model.addAttribute("title", "Doctors | Doctorly");
+        model.addAttribute("pageCss", "/css/doctors.css");
         return "/doctorsDisplay/doctors";
     }
 }

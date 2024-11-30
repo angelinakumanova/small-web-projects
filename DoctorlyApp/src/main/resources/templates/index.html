@@ -19,22 +19,7 @@
 
         <div class="specialists-select">
             <h2>Find the Right Expert for Your Health Needs!</h2>
-            <form th:action="@{/search}" method="get">
-                <select name="specialization">
-                    <option value="">Select specialization</option>
-                    <option th:each="specialization : ${specializations}"
-                            th:value="${specialization}"
-                            th:text="${specialization}"></option>
-                </select>
-
-                <select name="city">
-                    <option value="">Select your city</option>
-                    <option th:each="city : ${cities}"
-                            th:value="${city}"
-                            th:text="${city}"></option>
-                </select>
-                <button type="submit">Search</button>
-            </form>
+            <th:block th:insert="~{fragments/form-select-specialists}"></th:block>
         </div>
     </div>
 

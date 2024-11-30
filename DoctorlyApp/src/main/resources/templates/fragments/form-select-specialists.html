@@ -1,0 +1,18 @@
+<form th:action="@{/search}" method="get">
+    <select name="specialization">
+        <option value="">Select specialization</option>
+        <option th:each="specialization : ${specializations}"
+                th:value="${specialization}"
+                th:text="${specialization}"
+                th:selected="${specialization == currentSpec}"></option>
+    </select>
+
+    <select name="city">
+        <option value="">Select your city</option>
+        <option th:each="city : ${cities}"
+                th:value="${city}"
+                th:text="${city}"
+                th:selected="${city == currentCity}"></option>
+    </select>
+    <button type="submit">Search</button>
+</form>
