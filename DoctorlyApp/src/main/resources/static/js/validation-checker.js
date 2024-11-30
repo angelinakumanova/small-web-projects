@@ -5,10 +5,8 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
     const payload = Object.fromEntries(formData);
 
-    const endpoint = window.location.pathname === "/users/signup" ? "signup" : "login";
-    const fetchPage = `/api/validate/${endpoint}`;
 
-    fetch(fetchPage, {
+    fetch("/api/validate/signup", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -32,7 +30,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
             return response.json();
         })
         .then(() => {
-            window.location.href = "/";
+            window.location.href = "users/login";
         })
         .catch((error) => {
             console.error("Error during signup:", error.message);
