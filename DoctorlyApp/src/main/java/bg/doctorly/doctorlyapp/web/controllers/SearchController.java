@@ -2,9 +2,7 @@ package bg.doctorly.doctorlyapp.web.controllers;
 
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
 import bg.doctorly.doctorlyapp.service.SharedDataService;
-import bg.doctorly.doctorlyapp.service.entityService.CityService;
 import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
-import bg.doctorly.doctorlyapp.service.entityService.SpecializationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,6 +42,7 @@ public class SearchController {
 
         model.addAttribute("title", "Doctors | Doctorly");
         model.addAttribute("pageCss", "/css/doctors.css");
+
         return "/doctorsDisplay/doctors";
     }
 }
