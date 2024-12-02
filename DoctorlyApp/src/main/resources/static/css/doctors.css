@@ -48,7 +48,7 @@ h1 {
 
 .site-header ul li {
     padding-top: 0.5em;
-    padding-right: 2em;    
+    padding-right: 2em;
 }
 
 .site-header a {
@@ -62,7 +62,7 @@ h1 {
     color: white;
     transition: 0.5s ease;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+
 }
 
 .site-header ul span:hover {
@@ -74,7 +74,7 @@ h1 {
 
 .specialists-select {
     margin: 0 auto;
-    width: 40%;
+    width: 50%;
     background-color: #FF784F;
     color: white;
     border-radius: 2em;
@@ -120,10 +120,9 @@ h1 {
     color: white;
 }
 
-
 .doctors-display {
     font-size: 1rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -131,23 +130,34 @@ h1 {
     gap: 2em;
     padding: 1em;
 }
+
 .col {
     max-width: 600px;
 }
 
 .card {
+    overflow: hidden;
+    font-size: 0.9em;
+    border-radius: 1em;
     display: flex;
-    flex-direction: row !important;
+    flex-direction: row;
+    gap: 1em;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 .card .btn.btn-primary {
+    align-self: center;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
     background-color: #FF784F;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
     border: none;
     border-radius: 2em;
     transition: 0.5s ease;
 }
+
 
 .card .btn.btn-primary:hover {
     cursor: pointer;
