@@ -21,8 +21,8 @@
                     <img th:src="${doctor.profilePictureUrl}">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title" th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></h5>
-                    <h6 th:text="${doctor.city.name}"></h6>
+                    <h4 class="card-title" th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></h4>
+                    <h5 th:text="${doctor.city.name}"></h5>
                     <p class="card-text" th:text="${doctor.description}"></p>
                     <a href="#" class="btn btn-primary">Book Appointment</a>
                 </div>
