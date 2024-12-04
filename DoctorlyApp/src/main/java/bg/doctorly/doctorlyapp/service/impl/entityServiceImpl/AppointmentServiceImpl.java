@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Optional;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
@@ -52,6 +53,16 @@ public class AppointmentServiceImpl implements AppointmentService {
         } catch (IOException e) {
             logger.error("Error reading appointments data from file: {}", FILE_PATH);
         }
+    }
+
+    @Override
+    public Optional<Appointment> getAppointmentById(Long id) {
+        return appointmentRepository.findById(id);
+    }
+
+    @Override
+    public void save(Appointment appointment) {
+        this.appointmentRepository.saveAndFlush(appointment);
     }
 
     private Appointment mapToAppointment(AppointmentImportModel a) {

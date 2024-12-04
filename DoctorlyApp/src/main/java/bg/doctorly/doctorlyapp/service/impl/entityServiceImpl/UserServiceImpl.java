@@ -113,4 +113,9 @@ public class UserServiceImpl implements UserService {
 
         return passwordEncoder.matches(inputPassword, storedPassword);
     }
+
+    @Override
+    public Patient getPatientByEmail(String email) {
+        return userRepository.findByEmail(email).get().getPatient();
+    }
 }

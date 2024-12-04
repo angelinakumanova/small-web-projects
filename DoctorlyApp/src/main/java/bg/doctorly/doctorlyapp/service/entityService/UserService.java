@@ -1,5 +1,6 @@
 package bg.doctorly.doctorlyapp.service.entityService;
 
+import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.data.entites.User;
 import bg.doctorly.doctorlyapp.web.models.UserRegisterModel;
 
@@ -14,4 +15,6 @@ public interface UserService extends BaseService {
     boolean findByEmail(String email);
 
     boolean existsByEmailAndPassword(String email, String password);
+
+    Patient getPatientByEmail(String email);
 }

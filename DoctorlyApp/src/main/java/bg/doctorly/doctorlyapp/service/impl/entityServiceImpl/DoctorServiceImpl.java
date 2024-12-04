@@ -1,5 +1,6 @@
 package bg.doctorly.doctorlyapp.service.impl.entityServiceImpl;
 
+import bg.doctorly.doctorlyapp.data.entites.Appointment;
 import bg.doctorly.doctorlyapp.data.entites.City;
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
 import bg.doctorly.doctorlyapp.data.entites.Specialization;
@@ -7,6 +8,7 @@ import bg.doctorly.doctorlyapp.data.repositories.DoctorRepository;
 import bg.doctorly.doctorlyapp.service.entityService.CityService;
 import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
 import bg.doctorly.doctorlyapp.service.entityService.SpecializationService;
+import bg.doctorly.doctorlyapp.service.models.exports.AppointmentSearchModel;
 import bg.doctorly.doctorlyapp.service.models.exports.DoctorSearchModel;
 import bg.doctorly.doctorlyapp.service.models.imports.DoctorImportModel;
 import com.google.gson.Gson;
@@ -79,7 +81,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public List<DoctorSearchModel> searchDoctors(String specialization, String city) {
-        List<Doctor> doctors = new ArrayList<>();
+        List<Doctor> doctors;
         Specialization spec = specializationService.findByName(specialization).orElse(null);
         City cityObj = cityService.findByName(city).orElse(null);
 
@@ -93,7 +95,18 @@ public class DoctorServiceImpl implements DoctorService {
             doctors = doctorRepository.findByCity(cityObj);
         }
 
-        return doctors.stream().map(d -> modelMapper.map(d, DoctorSearchModel.class)).toList();
+        return doctors.stream().map(this::mapDoctors).toList();
 
+    }
+
+    private DoctorSearchModel mapDoctors(Doctor d) {
+        List<Appointment> appointments = d.getAppointments().stream().filter(a -> a.getPatient() == null).toList();
+        List<AppointmentSearchModel> filteredAppointments = appointments.stream()
+                .map(a -> modelMapper.map(a, AppointmentSearchModel.class))
+                .toList();
+        DoctorSearchModel map = modelMapper.map(d, DoctorSearchModel.class);
+        map.setAppointments(filteredAppointments);
+
+        return map;
     }
 }

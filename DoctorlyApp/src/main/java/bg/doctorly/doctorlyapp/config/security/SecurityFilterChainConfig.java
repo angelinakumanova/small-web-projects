@@ -33,7 +33,7 @@ public class SecurityFilterChainConfig {
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .failureUrl("/users/login?error=true")
-                        .defaultSuccessUrl("/")
+                        .successHandler((request, response, authentication) -> response.sendRedirect("/"))
                         .permitAll())
                 .logout(logout -> logout.logoutUrl("/users/logout").logoutSuccessUrl("/").permitAll())
                 .userDetailsService(customDetailsService);

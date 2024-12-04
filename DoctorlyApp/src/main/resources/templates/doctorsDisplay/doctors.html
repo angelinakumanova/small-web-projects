@@ -33,7 +33,8 @@
                     <div class="dates">
                         <div class="date" th:each="appointment : ${doctor.appointments}">
                             <p th:text="${appointment.appointmentDateTime}"></p>
-                            <a href="#" class="btn btn-primary secondary">Book Appointment</a>
+                            <a th:href="@{/book-appointment/{id}(id=${appointment.id})}"
+                               class="btn btn-primary" th:attr="data-id=${appointment.id}">Book Appointment</a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,7 @@
 <script>
     const backdrop = document.querySelector(".backdrop");
 
-    document.querySelectorAll(".btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
+    document.querySelectorAll(".card-body .btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
         const card = e.target.closest("div.card");
         const modal = card.children.item(3);
 
@@ -66,7 +67,16 @@
         document.body.addEventListener('click', closeModal);
     }));
 
-
+    // document.querySelectorAll(".appointments .btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
+    //     const appointmentId = button.getAttribute("data-id");
+    //
+    //     fetch(`/book-appointment/${appointmentId}`, {
+    //         method: "POST"
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => console.log("Booking successful:", data))
+    //         .catch(error => console.error("Error booking appointment:", error));
+    // }))
 </script>
 </body>
 </html>

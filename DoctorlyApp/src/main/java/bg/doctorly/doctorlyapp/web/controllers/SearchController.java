@@ -1,6 +1,5 @@
 package bg.doctorly.doctorlyapp.web.controllers;
 
-import bg.doctorly.doctorlyapp.data.entites.Doctor;
 import bg.doctorly.doctorlyapp.service.SharedDataService;
 import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
 import bg.doctorly.doctorlyapp.service.models.exports.DoctorSearchModel;
