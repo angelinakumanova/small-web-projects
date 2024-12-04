@@ -3,6 +3,7 @@ package bg.doctorly.doctorlyapp.web.controllers;
 import bg.doctorly.doctorlyapp.data.entites.Doctor;
 import bg.doctorly.doctorlyapp.service.SharedDataService;
 import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
+import bg.doctorly.doctorlyapp.service.models.exports.DoctorSearchModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class SearchController {
         model.addAttribute("currentSpec", specialization);
         model.addAttribute("currentCity", city);
 
-        List<Doctor> doctors = doctorService.searchDoctors(specialization, city);
+        List<DoctorSearchModel> doctors = doctorService.searchDoctors(specialization, city);
 
         model.addAttribute("doctors", doctors);
 

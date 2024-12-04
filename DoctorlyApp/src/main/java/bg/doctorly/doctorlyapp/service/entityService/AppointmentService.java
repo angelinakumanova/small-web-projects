@@ -1,4 +1,4 @@
 package bg.doctorly.doctorlyapp.service.entityService;
 
-public interface AppointmentService {
+public interface AppointmentService extends BaseService {
 }

@@ -12,14 +12,16 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
     private final UserService userService;
     private final SpecializationService specializationService;
     private final CityService cityService;
+    private final AppointmentService appointmentService;
 
-    public CommandLineRunnerImpl(DoctorService doctorService, PatientService patientService, UserService userService, SpecializationService specializationService, CityService cityService) {
+    public CommandLineRunnerImpl(DoctorService doctorService, PatientService patientService, UserService userService, SpecializationService specializationService, CityService cityService, AppointmentService appointmentService) {
         this.doctorService = doctorService;
         this.patientService = patientService;
         this.userService = userService;
         this.specializationService = specializationService;
 
         this.cityService = cityService;
+        this.appointmentService = appointmentService;
     }
 
     @Override
@@ -38,6 +40,10 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
         if (!doctorService.isImported()) {
             doctorService.seedData();
+        }
+
+        if (!appointmentService.isImported()) {
+            appointmentService.seedData();
         }
 
         if(!patientService.isImported()) {

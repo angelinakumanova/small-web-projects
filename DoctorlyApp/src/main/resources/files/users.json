@@ -2,55 +2,21 @@
   {
   "email": "ivan.ivanov@example.com",
   "password": "securepassword155",
-  "role": "PATIENT",
   "entity": 1
   },
   {
     "email": "jane.smith@example.com",
     "password": "securepassword156",
-    "role": "PATIENT",
     "entity": 2
   },
   {
     "email": "alice.johnson@example.com",
     "password": "securepassword103",
-    "role": "PATIENT",
     "entity": 3
   },
   {
     "email": "bob.brown@example.com",
     "password": "securepassword191",
-    "role": "PATIENT",
     "entity": 4
-  },
-  {
-    "email": "john.doe@example.com",
-    "password": "securepassword199",
-    "role": "DOCTOR",
-    "entity": 1
-  },
-  {
-    "email": "emily.smith@example.com",
-    "password": "securepassword124",
-    "role": "DOCTOR",
-    "entity": 2
-  },
-  {
-    "email": "michael.johnson@example.com",
-    "password": "securepassword125",
-    "role": "DOCTOR",
-    "entity": 3
-  },
-  {
-    "email": "sarah.williams@example.com",
-    "password": "securepassword126",
-    "role": "DOCTOR",
-    "entity": 4
-  },
-  {
-    "email": "david.brown@example.com",
-    "password": "securepassword127",
-    "role": "DOCTOR",
-    "entity": 5
   }
 ]

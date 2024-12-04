@@ -1,0 +1,62 @@
+[
+  {
+    "appointmentDateTime": "2024-12-05T09:00:00",
+    "doctor": 1
+  },
+  {
+    "appointmentDateTime": "2024-12-05T11:30:00",
+    "doctor": 1
+  },
+  {
+    "appointmentDateTime": "2024-12-06T15:45:00",
+    "doctor": 1
+  },
+  {
+    "appointmentDateTime": "2024-12-05T10:00:00",
+    "doctor": 2
+  },
+  {
+    "appointmentDateTime": "2024-12-05T13:00:00",
+    "doctor": 2
+  },
+  {
+    "appointmentDateTime": "2024-12-06T14:30:00",
+    "doctor": 2
+  },
+  {
+    "appointmentDateTime": "2024-12-05T08:30:00",
+    "doctor": 3
+  },
+  {
+    "appointmentDateTime": "2024-12-05T12:15:00",
+    "doctor": 3
+  },
+  {
+    "appointmentDateTime": "2024-12-06T16:00:00",
+    "doctor": 3
+  },
+  {
+    "appointmentDateTime": "2024-12-05T09:45:00",
+    "doctor": 4
+  },
+  {
+    "appointmentDateTime": "2024-12-05T14:00:00",
+    "doctor": 4
+  },
+  {
+    "appointmentDateTime": "2024-12-06T11:30:00",
+    "doctor": 4
+  },
+  {
+    "appointmentDateTime": "2024-12-05T10:30:00",
+    "doctor": 5
+  },
+  {
+    "appointmentDateTime": "2024-12-05T12:45:00",
+    "doctor": 5
+  },
+  {
+    "appointmentDateTime": "2024-12-06T15:00:00",
+    "doctor": 5
+  }
+]

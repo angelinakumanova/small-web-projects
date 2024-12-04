@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
     private final static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     private final UserRepository userRepository;
-    private final DoctorService doctorService;
     private final PatientService patientService;
 
     private final Gson gson;
@@ -38,9 +37,8 @@ public class UserServiceImpl implements UserService {
     private final ValidationUtil validationUtil;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, DoctorService doctorService, PatientService patientService, Gson gson, ModelMapper modelMapper, ValidationUtil validationUtil, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, PatientService patientService, Gson gson, ModelMapper modelMapper, ValidationUtil validationUtil, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
-        this.doctorService = doctorService;
         this.patientService = patientService;
         this.gson = gson;
         this.modelMapper = modelMapper;
@@ -72,11 +70,6 @@ public class UserServiceImpl implements UserService {
         String hashedPassword = passwordEncoder.encode(u.getPassword());
         map.setPassword(hashedPassword);
 
-        if (u.getRole().equals("DOCTOR")) {
-            map.setDoctor(doctorService.getById(u.getEntity()).get());
-            return map;
-        }
-
         map.setPatient(patientService.getById(u.getEntity()).get());
         return map;
     }
@@ -98,8 +91,6 @@ public class UserServiceImpl implements UserService {
         patientService.savePatient(mappedPatient);
 
         mapped.setPatient(mappedPatient);
-        mapped.setRole("PATIENT");
-
         this.userRepository.saveAndFlush(mapped);
     }
 

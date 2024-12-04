@@ -8,7 +8,7 @@ import org.modelmapper.spi.MappingContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Configuration
@@ -24,12 +24,14 @@ public class BeanConfiguration {
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
-        Converter<String, LocalDate> converter = new Converter<>() {
+
+        Converter<LocalDateTime, String> converter = new Converter<LocalDateTime, String>() {
             @Override
-            public LocalDate convert(MappingContext<String, LocalDate> context) {
-                return LocalDate.parse(context.getSource(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            public String convert(MappingContext<LocalDateTime, String> context) {
+                return DateTimeFormatter.ofPattern("d MMMM yyyy 'at' HH:mm").format(context.getSource());
             }
         };
+
 
         modelMapper.addConverter(converter);
         return modelMapper;

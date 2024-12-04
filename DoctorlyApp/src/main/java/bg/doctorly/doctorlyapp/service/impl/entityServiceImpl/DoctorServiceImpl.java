@@ -7,6 +7,7 @@ import bg.doctorly.doctorlyapp.data.repositories.DoctorRepository;
 import bg.doctorly.doctorlyapp.service.entityService.CityService;
 import bg.doctorly.doctorlyapp.service.entityService.DoctorService;
 import bg.doctorly.doctorlyapp.service.entityService.SpecializationService;
+import bg.doctorly.doctorlyapp.service.models.exports.DoctorSearchModel;
 import bg.doctorly.doctorlyapp.service.models.imports.DoctorImportModel;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -76,19 +78,22 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public List<Doctor> searchDoctors(String specialization, String city) {
+    public List<DoctorSearchModel> searchDoctors(String specialization, String city) {
+        List<Doctor> doctors = new ArrayList<>();
         Specialization spec = specializationService.findByName(specialization).orElse(null);
         City cityObj = cityService.findByName(city).orElse(null);
 
         if (spec == null && cityObj == null) {
-            return doctorRepository.findAll();
+            doctors = doctorRepository.findAll();
         } else if (spec != null && cityObj != null) {
-            return doctorRepository.findBySpecializationAndCity(spec, cityObj);
+            doctors = doctorRepository.findBySpecializationAndCity(spec, cityObj);
         } else if (spec != null) {
-            return doctorRepository.findBySpecialization(spec);
+            doctors = doctorRepository.findBySpecialization(spec);
         } else {
-            return doctorRepository.findByCity(cityObj);
+            doctors = doctorRepository.findByCity(cityObj);
         }
+
+        return doctors.stream().map(d -> modelMapper.map(d, DoctorSearchModel.class)).toList();
 
     }
 }

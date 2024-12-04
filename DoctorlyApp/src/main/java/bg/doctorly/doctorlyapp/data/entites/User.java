@@ -11,9 +11,6 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String role;
-
     @OneToOne
     @JoinColumn(name = "patient_id")
     private Patient patient;
@@ -38,14 +35,6 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public Patient getPatient() {

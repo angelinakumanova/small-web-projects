@@ -23,7 +23,7 @@ public class Doctor extends BaseEntity {
     private String description;
     @Column(nullable = false, unique = true)
     private String phoneNumber;
-    @OneToMany(mappedBy = "doctor")
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER)
     private List<Appointment> appointments;
 
     public Doctor() {}

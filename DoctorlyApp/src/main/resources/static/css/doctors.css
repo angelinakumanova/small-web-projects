@@ -113,6 +113,10 @@ h1 {
     transition: 0.5s ease;
 }
 
+.specialists-select option {
+    border-radius: 1em;
+}
+
 .specialists-select button:hover {
     cursor: pointer;
     background-color: #a31728;
@@ -185,6 +189,32 @@ h1 {
     justify-content: space-evenly;
 }
 
+.appointments {
+    padding: 1em;
+    text-align: center;
+    background-color: white;
+    width: 800px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1em;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    z-index: 1001;
+}
+
+.appointments .date {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    gap: 5em;
+    font-weight: 600;
+}
+
+.appointments .date a {
+    flex: 1;
+}
+
 .site-container {
     padding-bottom: 2em;
 }
@@ -199,6 +229,20 @@ h1 {
     padding-top: 3em;
 }
 
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+}
+
+.backdrop.active {
+    display: block;
+}
 
 
 

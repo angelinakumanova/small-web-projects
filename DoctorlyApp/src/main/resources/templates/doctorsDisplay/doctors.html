@@ -22,9 +22,20 @@
                 </div>
                 <div class="card-body">
                     <h4 class="card-title" th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></h4>
-                    <h5 th:text="${doctor.city.name}"></h5>
+                    <h5 th:text="${doctor.cityName}"></h5>
                     <p class="card-text" th:text="${doctor.description}"></p>
                     <a href="#" class="btn btn-primary">Book Appointment</a>
+                </div>
+
+                <div class="backdrop"></div>
+                <div class="appointments" style="display:none">
+                    <h1>Available dates</h1>
+                    <div class="dates">
+                        <div class="date" th:each="appointment : ${doctor.appointments}">
+                            <p th:text="${appointment.appointmentDateTime}"></p>
+                            <a href="#" class="btn btn-primary secondary">Book Appointment</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,5 +43,30 @@
 
     <th:block th:insert="~{fragments/footer}"></th:block>
 
+<script>
+    const backdrop = document.querySelector(".backdrop");
+
+    document.querySelectorAll(".btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
+        const card = e.target.closest("div.card");
+        const modal = card.children.item(3);
+
+        modal.style.display = "block";
+        backdrop.classList.add("active");
+
+        const closeModal = (event) => {
+
+            if (!modal.contains(event.target) && !button.contains(event.target)) {
+                modal.style.display = "none";
+                backdrop.classList.remove("active");
+
+                document.body.removeEventListener("click", closeModal);
+            }
+        };
+
+        document.body.addEventListener('click', closeModal);
+    }));
+
+
+</script>
 </body>
 </html>
