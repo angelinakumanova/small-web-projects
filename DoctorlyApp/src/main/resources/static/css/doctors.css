@@ -211,7 +211,7 @@ h1 {
     font-weight: 600;
 }
 
-.appointments .date a {
+.appointments .date .btn.btn-primary {
     flex: 1;
 }
 

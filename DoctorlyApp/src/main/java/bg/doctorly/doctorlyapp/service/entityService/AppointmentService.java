@@ -9,4 +9,6 @@ public interface AppointmentService extends BaseService {
     Optional<Appointment> getAppointmentById(Long id);
 
     void save(Appointment appointment);
+
+    boolean existsByPatientAndAppointment(Long patientId, Appointment appointment);
 }

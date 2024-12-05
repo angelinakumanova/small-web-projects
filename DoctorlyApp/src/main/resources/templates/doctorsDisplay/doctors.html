@@ -33,10 +33,10 @@
                     <div class="dates">
                         <div class="date" th:each="appointment : ${doctor.appointments}">
                             <p th:text="${appointment.appointmentDateTime}"></p>
-                            <a th:href="@{/book-appointment/{id}(id=${appointment.id})}"
-                               class="btn btn-primary" th:attr="data-id=${appointment.id}">Book Appointment</a>
+                            <span th:attr="data-id=${appointment.id}" class="btn btn-primary">Book Appointment</span>
                         </div>
                     </div>
+                    <h5 class="feedback" style="opacity: 0; transition: opacity 1s ease;"></h5>
                 </div>
             </div>
         </div>
@@ -67,16 +67,41 @@
         document.body.addEventListener('click', closeModal);
     }));
 
-    // document.querySelectorAll(".appointments .btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
-    //     const appointmentId = button.getAttribute("data-id");
-    //
-    //     fetch(`/book-appointment/${appointmentId}`, {
-    //         method: "POST"
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => console.log("Booking successful:", data))
-    //         .catch(error => console.error("Error booking appointment:", error));
-    // }))
+    document.querySelectorAll(".appointments .btn.btn-primary").forEach(button => {
+        button.addEventListener("click", (e) => {
+            const appointmentId = button.getAttribute("data-id");
+
+            fetch(`/book-appointment/${appointmentId}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+                .then(response => response.json().then(data => ({ status: response.status, body: data })))
+                .then(({ status, body }) => {
+                    const feedback = e.target.closest(".appointments").querySelector(".feedback");
+
+                    if (status === 200) {
+                        feedback.style.color = "green";
+                        feedback.textContent = body.message;
+
+                        const dateElement = button.closest(".date");
+                        dateElement.parentNode.removeChild(dateElement);
+                    } else if (status === 401) {
+                        window.location.href = "users/login";
+                    } else {
+                        feedback.style.color = "red";
+                        feedback.textContent = body.message;
+                    }
+
+                    feedback.style.opacity = "1";
+                    setTimeout(() => {
+                        feedback.style.opacity = "0";
+                    }, 3000);
+                })
+                .catch(error => console.error("Error booking appointment:", error));
+        });
+    });
 </script>
 </body>
 </html>

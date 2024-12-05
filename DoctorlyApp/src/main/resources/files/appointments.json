@@ -24,6 +24,10 @@
     "doctor": 2
   },
   {
+    "appointmentDateTime": "2024-12-06T15:45:00",
+    "doctor": 2
+  },
+  {
     "appointmentDateTime": "2024-12-05T08:30:00",
     "doctor": 3
   },

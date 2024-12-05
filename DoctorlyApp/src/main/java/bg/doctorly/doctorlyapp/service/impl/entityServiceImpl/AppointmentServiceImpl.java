@@ -65,6 +65,14 @@ public class AppointmentServiceImpl implements AppointmentService {
         this.appointmentRepository.saveAndFlush(appointment);
     }
 
+    @Override
+    public boolean existsByPatientAndAppointment(Long patientId, Appointment appointment) {
+        Appointment appt = appointmentRepository
+                .findByAppointmentDateTimeAndPatientId(appointment.getAppointmentDateTime(), patientId).orElse(null);
+
+        return appt != null;
+    }
+
     private Appointment mapToAppointment(AppointmentImportModel a) {
         Appointment map = modelMapper.map(a, Appointment.class);
         map.setDoctor(doctorService.getById(a.getDoctor()).get());
