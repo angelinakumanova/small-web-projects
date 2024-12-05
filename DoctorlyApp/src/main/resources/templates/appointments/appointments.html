@@ -11,16 +11,24 @@
     <div class="appointments">
         <div class="appointment" th:each="appointment: ${appointments}">
             <div class="image-box">
-                <img th:src="${appointment.doctor.profilePictureUrl}">
+                <img th:src="${appointment.doctor.profilePictureUrl}" alt="doctor">
             </div>
 
             <div class="info-content">
                 <h3 th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName}"></h3>
                 <h5 th:text="${appointment.doctor.specialization.name}"></h5>
-                <div class="phone" th:utext="${appointment.doctor.phoneNumber}"><i class="fa-solid fa-phone"></i></div>
-                <div class="location" th:utext="${appointment.doctor.city.name}"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="date-time" th:utext="${#dates.format(appointment.appointmentDateTime, 'dd-MM-yyyy HH:mm')}">
-                    <i class="fa-solid fa-calendar-days"></i></div>
+                <div class="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span th:text="${appointment.doctor.phoneNumber}"></span>
+                </div>
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span th:text="${appointment.doctor.city.name}"></span>
+                </div>
+                <div class="date-time">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span th:text="${appointment.appointmentDateTime}"></span>
+                </div>
             </div>
         </div>
 

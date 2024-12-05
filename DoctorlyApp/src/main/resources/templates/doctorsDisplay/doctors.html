@@ -23,6 +23,7 @@
                 <div class="card-body">
                     <h4 class="card-title" th:text="${doctor.firstName} + ' ' + ${doctor.lastName}"></h4>
                     <h5 th:text="${doctor.cityName}"></h5>
+                    <h5 th:text="${doctor.specializationName}"></h5>
                     <p class="card-text" th:text="${doctor.description}"></p>
                     <span class="btn btn-primary">Book Appointment</span>
                 </div>

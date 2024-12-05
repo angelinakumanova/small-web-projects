@@ -5,6 +5,8 @@ import bg.doctorly.doctorlyapp.data.entites.Appointment;
 import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.service.entityService.AppointmentService;
 import bg.doctorly.doctorlyapp.service.entityService.UserService;
+import bg.doctorly.doctorlyapp.service.models.exports.AppointmentStringModel;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,22 +28,32 @@ public class AppointmentController {
 
     private final AppointmentService appointmentService;
     private final UserService userService;
+    private final ModelMapper modelMapper;
 
-    public AppointmentController(AppointmentService appointmentService, UserService userService) {
+    public AppointmentController(AppointmentService appointmentService, UserService userService, ModelMapper modelMapper) {
         this.appointmentService = appointmentService;
         this.userService = userService;
+        this.modelMapper = modelMapper;
     }
 
     @GetMapping("/appointments")
     public String appointments(Model model, @AuthenticationPrincipal UserDetails user) {
         Patient userPatient = userService.getPatientByEmail(user.getUsername());
 
-        model.addAttribute("appointments", userPatient.getAppointments());
+        List<AppointmentStringModel> formatted = userPatient.getAppointments().stream().map(this::mapToAppointment).toList();
+        model.addAttribute("appointments", formatted);
         model.addAttribute("title", "Appointments | Doctorly");
         model.addAttribute("pageCss", "/css/appointments.css");
 
 
         return "/appointments/appointments";
+    }
+
+    private AppointmentStringModel mapToAppointment(Appointment a) {
+        AppointmentStringModel map = modelMapper.map(a, AppointmentStringModel.class);
+        map.setAppointmentDateTime(DateTimeFormatter.ofPattern("d MMM yyyy HH:mm").format(a.getAppointmentDateTime()));
+
+        return map;
     }
 
 

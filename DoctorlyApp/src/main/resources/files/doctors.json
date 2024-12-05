@@ -9,39 +9,120 @@
     "phoneNumber": "+1234567890"
   },
   {
-    "firstName": "Emily",
+    "firstName": "Jane",
     "lastName": "Smith",
-    "city": "Ruse",
-    "profilePictureUrl": "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
+    "city": "Plovdiv",
+    "profilePictureUrl": "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=926&fit=clip",
     "specialization": "Cardiologist",
-    "description": "Cardiologist specializing in heart disease and preventative care.",
-    "phoneNumber": "+1234567891"
+    "description": "Specialist in diagnosing and treating heart diseases.",
+    "phoneNumber": "+359888555123"
   },
   {
     "firstName": "Michael",
-    "lastName": "Johnson",
-    "city": "Blagoevgrad",
-    "profilePictureUrl": "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZG9jdG9yfGVufDB8fDB8fHww",
-    "specialization": "Orthopedic Surgeon",
-    "description": "Orthopedic surgeon with expertise in joint replacement and sports injuries.",
-    "phoneNumber": "+1234567892"
-  },
-  {
-    "firstName": "Sarah",
-    "lastName": "Williams",
-    "city": "Varna",
-    "profilePictureUrl": "https://www.shutterstock.com/image-photo/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
-    "specialization": "Dermatologist",
-    "description": "Specializing in skin conditions, skin cancer prevention, and cosmetic dermatology.",
-    "phoneNumber": "+1234567893"
-  },
-  {
-    "firstName": "David",
     "lastName": "Brown",
     "city": "Varna",
-    "profilePictureUrl": "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg",
+    "profilePictureUrl": "https://lh3.googleusercontent.com/proxy/Z-kGxfttHVc0RoXVV3KB1EzYfCdTmvWQqZ99UjlmnXh7oeC4ccuZObvaYp2MsVOQA6srPW9Ac-5l4e5WCG05DhXWSZ_21VJRUsN21t0B7HlbJKcjN2OC_8ch0r4HwxVVUfG90RI96_nqkWvlwaoMiAwUgik",
+    "specialization": "Dermatologist",
+    "description": "Expert in skin conditions and cosmetic procedures.",
+    "phoneNumber": "+359876543210"
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "city": "Burgas",
+    "profilePictureUrl": "https://images.healthshots.com/healthshots/en/uploads/2022/07/02195043/doctor-stress.jpg",
+    "specialization": "Endocrinologist",
+    "description": "Focus on hormonal imbalances and endocrine disorders.",
+    "phoneNumber": "+359898123456"
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Garcia",
+    "city": "Ruse",
+    "profilePictureUrl": "https://assets.avant.org.au/cdf6134c-01d7-0292-26f5-2f5cf1db96f8/43ba484a-4df2-4681-9336-b5648a7dbc49/otolaryngologist%20infographic.jpg",
+    "specialization": "Gastroenterologist",
+    "description": "Experienced in treating digestive system conditions.",
+    "phoneNumber": "+359878654321"
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Martinez",
+    "city": "Stara Zagora",
+    "profilePictureUrl": "https://img.freepik.com/free-photo/front-view-female-doctor-wearing-stethoscope_23-2149856262.jpg",
+    "specialization": "Gynecologist",
+    "description": "Dedicated to women's reproductive health.",
+    "phoneNumber": "+359899234567"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Wilson",
+    "city": "Pleven",
+    "profilePictureUrl": "https://familydoctor.org/wp-content/uploads/2018/02/41808433_l-848x566.jpg",
+    "specialization": "Hematologist",
+    "description": "Expert in blood-related disorders and treatments.",
+    "phoneNumber": "+359878123654"
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Anderson",
+    "city": "Blagoevgrad",
+    "profilePictureUrl": "https://www.umhs-sk.org/hs-fs/hubfs/how-to-become-a-family-medicine-doctor.jpeg?width=255&name=how-to-become-a-family-medicine-doctor.jpeg",
+    "specialization": "Neurologist",
+    "description": "Specialist in nervous system conditions.",
+    "phoneNumber": "+359888654123"
+  },
+  {
+    "firstName": "Ethan",
+    "lastName": "Thomas",
+    "city": "Veliko Tarnovo",
+    "profilePictureUrl": "https://snibbs.co/cdn/shop/articles/What_are_the_Challenges_of_Being_a_Doctor.jpg?v=1684314843",
+    "specialization": "Oncologist",
+    "description": "Focused on diagnosing and treating cancer.",
+    "phoneNumber": "+359898765432"
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Taylor",
+    "city": "Shumen",
+    "profilePictureUrl": "https://img.freepik.com/free-photo/beautiful-young-female-doctor-looking-camera-office_1301-7807.jpg",
+    "specialization": "Ophthalmologist",
+    "description": "Specialized in eye care and vision correction.",
+    "phoneNumber": "+359899456789"
+  },
+  {
+    "firstName": "Mason",
+    "lastName": "Moore",
+    "city": "Sofia",
+    "profilePictureUrl": "https://flci.ca/wp-content/uploads/2023/07/iStock-862722044-scaled.jpg",
+    "specialization": "Orthopedic Surgeon",
+    "description": "Expert in treating bone and joint disorders.",
+    "phoneNumber": "+359878987654"
+  },
+  {
+    "firstName": "Mia",
+    "lastName": "Clark",
+    "city": "Plovdiv",
+    "profilePictureUrl": "https://www.yourfreecareertest.com/wp-content/uploads/2016/07/physician.jpg",
     "specialization": "Pediatrician",
-    "description": "Pediatrician focused on childhood diseases and developmental health.",
-    "phoneNumber": "+1234567894"
+    "description": "Caring for the health and wellbeing of children.",
+    "phoneNumber": "+359888765432"
+  },
+  {
+    "firstName": "Lucas",
+    "lastName": "Rodriguez",
+    "city": "Varna",
+    "profilePictureUrl": "https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/456/2024/04/Family-Medicine-Physician-Texas-Medical-Institute-Irving-TX.jpg",
+    "specialization": "Psychiatrist",
+    "description": "Focused on mental health and well-being.",
+    "phoneNumber": "+359898123987"
+  },
+  {
+    "firstName": "Ella",
+    "lastName": "Martinez",
+    "city": "Burgas",
+    "profilePictureUrl": "https://static.vecteezy.com/system/resources/thumbnails/028/287/555/small_2x/an-indian-young-female-doctor-isolated-on-green-ai-generated-photo.jpg",
+    "specialization": "Pulmonologist",
+    "description": "Expert in respiratory system conditions.",
+    "phoneNumber": "+359899765432"
   }
 ]
