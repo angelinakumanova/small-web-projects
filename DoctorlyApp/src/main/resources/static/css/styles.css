@@ -8,10 +8,6 @@ body {
     font: 20px/1.5 'Lato', sans-serif;
 }
 
-h1, h2 {
-    font-weight: bold;
-}
-
 .site-header {
     display: flex;
     justify-content: space-between;

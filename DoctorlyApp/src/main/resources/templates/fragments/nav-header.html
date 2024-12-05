@@ -8,7 +8,7 @@
         <ul>
             <li sec:authorize="isAnonymous()"><a th:href="@{users/login}"><span >Login</span></a></li>
             <li sec:authorize="isAnonymous()"><a th:href="@{users/signup}"><span>Register</span></a></li>
-            <li sec:authorize="isAuthenticated()"><span>My Appointments</span></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{appointments}"><span>My Appointments</span></a></li>
             <li sec:authorize="isAuthenticated()">
                 <a th:href="@{users/logout}"><span>Logout</span></a>
             </li>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:insert="~{fragments/head}"></th:block>
+<body>
+
+<th:block th:insert="~{fragments/nav-header}"></th:block>
+
+<div class="site-container">
+    <h1>My Appointments</h1>
+
+    <div class="appointments">
+        <div class="appointment" th:each="appointment: ${appointments}">
+            <div class="image-box">
+                <img th:src="${appointment.doctor.profilePictureUrl}">
+            </div>
+
+            <div class="info-content">
+                <h3 th:text="${appointment.doctor.firstName} + ' ' + ${appointment.doctor.lastName}"></h3>
+                <h5 th:text="${appointment.doctor.specialization.name}"></h5>
+                <div class="phone" th:utext="${appointment.doctor.phoneNumber}"><i class="fa-solid fa-phone"></i></div>
+                <div class="location" th:utext="${appointment.doctor.city.name}"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="date-time" th:utext="${#dates.format(appointment.appointmentDateTime, 'dd-MM-yyyy HH:mm')}">
+                    <i class="fa-solid fa-calendar-days"></i></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="site-section site-footer">
+    <p>&copy; 2024 Doctorly. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

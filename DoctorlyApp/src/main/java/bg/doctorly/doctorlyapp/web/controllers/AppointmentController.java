@@ -6,13 +6,11 @@ import bg.doctorly.doctorlyapp.data.entites.Patient;
 import bg.doctorly.doctorlyapp.service.entityService.AppointmentService;
 import bg.doctorly.doctorlyapp.service.entityService.UserService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.MimeType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +29,19 @@ public class AppointmentController {
         this.appointmentService = appointmentService;
         this.userService = userService;
     }
+
+    @GetMapping("/appointments")
+    public String appointments(Model model, @AuthenticationPrincipal UserDetails user) {
+        Patient userPatient = userService.getPatientByEmail(user.getUsername());
+
+        model.addAttribute("appointments", userPatient.getAppointments());
+        model.addAttribute("title", "Appointments | Doctorly");
+        model.addAttribute("pageCss", "/css/appointments.css");
+
+
+        return "/appointments/appointments";
+    }
+
 
     @PostMapping("/book-appointment/{id}")
     @ResponseBody

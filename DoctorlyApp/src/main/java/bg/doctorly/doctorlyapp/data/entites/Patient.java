@@ -1,9 +1,6 @@
 package bg.doctorly.doctorlyapp.data.entites;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,7 +14,7 @@ public class Patient extends BaseEntity {
     private String lastName;
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
     private List<Appointment> appointments;
 
     public Patient() {}

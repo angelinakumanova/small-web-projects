@@ -47,7 +47,8 @@
 <script>
     const backdrop = document.querySelector(".backdrop");
 
-    document.querySelectorAll(".card-body .btn.btn-primary").forEach(button => button.addEventListener("click", (e) => {
+    document.querySelectorAll(".card-body .btn.btn-primary")
+        .forEach(button => button.addEventListener("click", (e) => {
         const card = e.target.closest("div.card");
         const modal = card.children.item(3);
 

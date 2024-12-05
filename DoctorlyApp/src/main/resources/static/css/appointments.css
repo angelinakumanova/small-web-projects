@@ -1,0 +1,136 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 20px/1.5 'Lato', sans-serif;
+
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.site-section.site-header .left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.site-section.site-header #logo {
+    height: 60px;
+}
+
+.site-section.site-header .left-side h1 {
+    color: #FF784F;
+    text-shadow: rgba(0, 0, 0, 0.10) 2px 3px 5px;
+    transition: 0.5s ease;
+}
+
+.site-section.site-header .left-side h1:hover {
+    cursor: pointer;
+    color: #a31728;
+    transition: 0.5s ease;
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.site-header ul li {
+    padding-top: 0.5em;
+    padding-right: 2em;
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+.site-header ul span {
+    background-color: #FF784F;
+    padding: 0.6em 1em;
+    border-radius: 1em;
+    color: white;
+    transition: 0.5s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.site-header ul span:hover {
+    cursor: pointer;
+    background-color: #a31728;
+    transition: 0.5s ease;
+}
+
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-container > h1 {
+    text-align: center;
+    color: white;
+    background-color: #a31728;
+    width: 35%;
+    margin: 0 auto;
+    border-radius: 1em;
+    padding: 0.5rem;
+    margin-bottom: 2em;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.appointments {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+.appointments .appointment {
+    max-width: 300px;
+    border: rgba(128, 128, 128, 0.562) solid 1px;
+    border-radius: 1em;
+    padding: 1em;
+    box-shadow: #FF784F 10px 10px 1px;
+}
+
+.appointments .appointment:hover {
+    background-color: #ff784f17;
+    border: none;
+}
+
+.appointments .appointment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.appointments .appointment .image-box {
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.appointments .appointment .info-content {
+    padding-top: 1em;
+}
+
+.appointments .appointment i {
+    padding-right: 0.5em;
+}
+
+.site-section.site-footer {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 3em;
+}
