@@ -29,7 +29,7 @@ public class BeanConfiguration {
         Converter<LocalDateTime, String> converterDateToString = new Converter<LocalDateTime, String>() {
             @Override
             public String convert(MappingContext<LocalDateTime, String> context) {
-                return DateTimeFormatter.ofPattern("d MMMM yyyy 'at' HH:mm").format(context.getSource());
+                return DateTimeFormatter.ofPattern("dd MMMM yyyy 'at' HH:mm").format(context.getSource());
             }
         };
 
