@@ -43,8 +43,14 @@ Inspired by completing a **Spring Data** course, **Doctorly** was developed to a
 ### Here's what you can expect from Doctorly:
 
 #### 1. Home Page
-#### 2. Registration Page
+![home-page](/readme-images/Doctorly/1-home-page.jpg)
+#### 2. Doctors Search
+![doctors-search](/readme-images/Doctorly/2-search-doctors.jpg)
 #### 3. Login Page
+![login-page](/readme-images/Doctorly/3-login.jpg)
+#### 4. Registration Page
+![registration-page](/readme-images/Doctorly/4-register.jpg)
+
 #### 4. Schedule Appointment
 
 
