@@ -1,7 +1,9 @@
-![Demo GIF 1](/readme-images/Doctorly/ezgif.com-video-to-gif-converter.gif)
+
 
 # 👨🏻‍⚕️ Doctorly 
 A **secure** and **user-friendly** website where patients can register or log in to **schedule** and **save appointments with doctors.** Doctorly simplifies appointment management while offering a seamless experience.
+
+![Demo GIF 1](/readme-images/Doctorly/doctorly-overview.gif)
 
 <br>
 
