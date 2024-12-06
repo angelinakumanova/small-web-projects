@@ -10,7 +10,7 @@ A website where patients can register or log in to schedule and save appointment
 - **Front-End Technologies:**
    - HTML & CSS (including some Bootstrap styling)
    - JavaScript
-- **Backend Technologies:**
+- **Backend Technologies: (Build Tool - Maven)**
     - Java
    - Spring Boot (Web, Security, Data)
    -  MySQL
