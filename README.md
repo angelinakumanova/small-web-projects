@@ -12,8 +12,7 @@ A website where patients can register or log in to schedule and save appointment
    - JavaScript
 - **Backend Technologies: (Build Tool - Maven)**
     - Java
-   - Spring Boot (Web, Security, Data JPA)
-   - Thymeleaf
+   - Spring Boot (Web, Security, Data JPA, Thymeleaf)
    -  MySQL
 - **Features:**
     - Patient Registration & Login
