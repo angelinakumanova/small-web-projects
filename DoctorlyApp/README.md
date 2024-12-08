@@ -21,9 +21,10 @@ Inspired by completing a **Spring Data** course, **Doctorly** was developed to a
 
 ## Features
 - **Patient Registration & Login:** Secure authentication for new and existing users.
-- **Appointment Scheduling:** Easily schedule and save doctor appointments.
-- **Secure Authentication and Authorization:** Ensures user data is protected with Spring Security.
-- **Data Management:** Reliable database storage using MySQL.
+- **Effortless Appointment Booking:** Easily register, log in, and manage appointments with doctors.
+- **Secure Authentication & Authorization:** Secure login and access management using Spring Security.
+- **Form Validation:** Ensuring accurate data entry with real-time validation for a seamless user experience.
+- **Data Management:** Reliable database storage using MySQL, with secure password hashing for user accounts.
 
 <br>
 
@@ -80,7 +81,7 @@ Inspired by completing a **Spring Data** course, **Doctorly** was developed to a
   spring.datasource.password=your-password
   ```
 
-### 3)Build the Application
+### 3) Build the Application
 ```bash
 mvn clean install
 ```
