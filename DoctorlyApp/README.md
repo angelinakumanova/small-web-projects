@@ -1,9 +1,10 @@
 
 
 # 👨🏻‍⚕️ Doctorly 
-A **secure** and **user-friendly** website where patients can register or log in to **schedule** and **save appointments with doctors.** Doctorly simplifies appointment management while offering a seamless experience.
+A **secure** and **user-friendly** website where patients can register or log in to **schedule** and **save appointments with doctors.** Doctorly simplifies appointment management and ensures a smooth experience.
 
 <div align="center">
+    <p align="center"><i>Quick overview</i></p>
     <img src="/readme-images/Doctorly/doctorly-overview.gif" alt="GIF Overview" width="600px" ">
 </div>
 

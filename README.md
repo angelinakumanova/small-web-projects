@@ -5,7 +5,7 @@ This repository contains a collection of small web projects I've worked on. Each
 ---
 
 ### 👨🏻‍⚕️ [Doctorly](DoctorlyApp)
-A website where patients can register or log in to schedule and save appointments with doctors. It streamlines appointment management while offering a secure and user-friendly experience.
+A website where patients can register or log in to schedule and save appointments with doctors. It offers a secure and user-friendly platform for efficient appointment management.
 
 - **Front-End Technologies:**
    - HTML & CSS (including some Bootstrap styling)
