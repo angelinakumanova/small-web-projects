@@ -22,10 +22,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -102,6 +99,7 @@ public class DoctorServiceImpl implements DoctorService {
     private DoctorSearchModel mapDoctors(Doctor d) {
         List<Appointment> appointments = d.getAppointments().stream().filter(a -> a.getPatient() == null).toList();
         List<AppointmentSearchModel> filteredAppointments = appointments.stream()
+                .sorted(Comparator.comparing(Appointment::getAppointmentDateTime))
                 .map(a -> modelMapper.map(a, AppointmentSearchModel.class))
                 .toList();
         DoctorSearchModel map = modelMapper.map(d, DoctorSearchModel.class);

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -40,7 +41,12 @@ public class AppointmentController {
     public String appointments(Model model, @AuthenticationPrincipal UserDetails user) {
         Patient userPatient = userService.getPatientByEmail(user.getUsername());
 
-        List<AppointmentStringModel> formatted = userPatient.getAppointments().stream().map(this::mapToAppointment).toList();
+        List<AppointmentStringModel> formatted = userPatient
+                .getAppointments()
+                .stream()
+                .sorted(Comparator.comparing(Appointment::getAppointmentDateTime))
+                .map(this::mapToAppointment)
+                .toList();
         model.addAttribute("appointments", formatted);
         model.addAttribute("title", "Appointments | Doctorly");
         model.addAttribute("pageCss", "/css/appointments.css");
