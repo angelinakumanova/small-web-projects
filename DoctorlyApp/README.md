@@ -1,7 +1,7 @@
 
 
 # 👨🏻‍⚕️ Doctorly 
-A **secure** and **user-friendly** website where patients can register or log in to **schedule** and **save appointments with doctors.** Doctorly simplifies appointment management and ensures a smooth experience.
+A **user-friendly** website where patients can register or log in to **schedule** and **save appointments with doctors.** Doctorly simplifies appointment management and ensures a smooth experience.
 
 <div align="center">
     <p align="center"><i>Quick overview</i></p>
