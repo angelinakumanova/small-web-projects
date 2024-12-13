@@ -13,7 +13,7 @@ Doctorly is a **web-based application** designed for patients to **register**, *
 ---
 
 ## About the Project
-Inspired by completing a **Spring Data** course, **Doctorly** was developed to apply newly learned concepts and explore **Spring Security and Web basics.** It aims to simplify the process of booking appointments, providing an intuitive and secure platform for users.
+Inspired by completing a **Spring Data** course, **Doctorly** was developed to **apply newly learned concepts** and **explore Spring Security and Web basics.** It aims to simplify the process of booking appointments, providing an intuitive and secure platform for users.
 
 <br>
 
